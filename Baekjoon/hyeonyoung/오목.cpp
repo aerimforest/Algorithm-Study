@@ -7,215 +7,43 @@ using namespace std;
 const int N = 19;
 int board[22][22];
 
+// 가로, 세로, 오른쪽아래, 오른쪽위
+int dx[] = {0, 1, 1, -1};
+int dy[] = {1, 0, 1, 1};
+
 void solve()
 {
-    int cnt;
-
-    // 가로
     for (int i = 1; i <= N; ++i)
     {
-        int cnt = 0;
-        for (int j = 1; j <= N + 1; ++j)
+        for (int j = 1; j <= N; ++j)
         {
             if (board[i][j] == 0)
+                continue;
+
+            for (int k = 0; k < 4; ++k)
             {
+                if (i - dx[k] > 0 && i - dx[k] <= N && j - dy[k] > 0 && j - dy[k] <= N && board[i - dx[k]][j - dy[k]] == board[i][j])
+                    continue;
+
+                int cnt = 1;
+                int x = i + dx[k], y = j + dy[k];
+                while (x > 0 && x <= N && y > 0 && y <= N && board[i][j] == board[x][y])
+                {
+                    cnt++;
+                    x += dx[k];
+                    y += dy[k];
+                }
                 if (cnt == 5)
                 {
-                    cout << board[i][j - 1] << "\n";
-                    cout << i << " " << j - 5 << "\n";
-
+                    cout << board[i][j] << "\n";
+                    cout << i << " " << j << "\n";
                     return;
                 }
-                cnt = 0;
-            }
-            else if (board[i][j - 1] == board[i][j])
-            {
-                cnt++;
-            }
-            else
-            {
-                if (cnt == 5)
-                {
-                    cout << board[i][j - 1] << "\n";
-                    cout << i << " " << j - 5 << "\n";
-
-                    return;
-                }
-                cnt = 1;
             }
         }
     }
-    // 세로
-    for (int j = 1; j <= N; ++j)
-    {
-        int cnt = 0;
-        for (int i = 1; i <= N + 1; ++i)
-        {
-            if (board[i][j] == 0)
-            {
-                if (cnt == 5)
-                {
-                    cout << board[i - 1][j] << "\n";
-                    cout << i - 5 << " " << j << "\n";
-
-                    return;
-                }
-                cnt = 0;
-            }
-            else if (board[i - 1][j] == board[i][j])
-            {
-                cnt++;
-            }
-            else
-            {
-                if (cnt == 5)
-                {
-                    cout << board[i - 1][j] << "\n";
-                    cout << i - 5 << " " << j << "\n";
-
-                    return;
-                }
-                cnt = 1;
-            }
-        }
-    }
-    // 오른쪽아래 대각선
-    for (int k = N - 5; k >= 0; --k)
-    {
-        int cnt = 0;
-        for (int j = k + 1; j <= N + 1; ++j)
-        {
-            int i = j - k;
-            if (board[i][j] == 0)
-            {
-                if (cnt == 5)
-                {
-                    cout << board[i - 1][j - 1] << "\n";
-                    cout << i - 5 << " " << j - 5 << "\n";
-
-                    return;
-                }
-                cnt = 0;
-            }
-            else if (board[i - 1][j - 1] == board[i][j])
-            {
-                cnt++;
-            }
-            else
-            {
-                if (cnt == 5)
-                {
-                    cout << board[i - 1][j - 1] << "\n";
-                    cout << i - 5 << " " << j - 5 << "\n";
-
-                    return;
-                }
-                cnt = 1;
-            }
-        }
-        cnt = 0;
-        for (int i = k + 1; i <= N + 1; ++i)
-        {
-            int j = i - k;
-            if (board[i][j] == 0)
-            {
-                if (cnt == 5)
-                {
-                    cout << board[i - 1][j - 1] << "\n";
-                    cout << i - 5 << " " << j - 5 << "\n";
-
-                    return;
-                }
-                cnt = 0;
-            }
-            else if (board[i - 1][j - 1] == board[i][j])
-            {
-                cnt++;
-            }
-            else
-            {
-                if (cnt == 5)
-                {
-                    cout << board[i - 1][j - 1] << "\n";
-                    cout << i - 5 << " " << j - 5 << "\n";
-
-                    return;
-                }
-                cnt = 1;
-            }
-        }
-    }
-    // 오른쪽위 대각선
-    for (int k = 6; k <= N; ++k)
-    {
-        int cnt = 0;
-        for (int i = k - 1; i >= 0; --i)
-        {
-            int j = k - i;
-            if (board[i][j] == 0)
-            {
-                if (cnt == 5)
-                {
-                    cout << board[i + 1][j - 1] << "\n";
-                    cout << i + 5 << " " << j - 5 << "\n";
-
-                    return;
-                }
-                cnt = 0;
-            }
-            else if (board[i + 1][j - 1] == board[i][j])
-            {
-                cnt++;
-            }
-            else
-            {
-                if (cnt == 5)
-                {
-                    cout << board[i + 1][j - 1] << "\n";
-                    cout << i + 5 << " " << j - 5 << "\n";
-
-                    return;
-                }
-                cnt = 1;
-            }
-        }
-    }
-    for (int k = N + 1; k <= 2 * N - 4; ++k)
-    {
-        int cnt = 0;
-        for (int j = 1; j <= N + 1; ++j)
-        {
-            int i = k - j;
-            if (board[i][j] == 0)
-            {
-                if (cnt == 5)
-                {
-                    cout << board[i + 1][j - 1] << "\n";
-                    cout << i + 5 << " " << j - 5 << "\n";
-
-                    return;
-                }
-                cnt = 0;
-            }
-            else if (board[i + 1][j - 1] == board[i][j])
-            {
-                cnt++;
-            }
-            else
-            {
-                if (cnt == 5)
-                {
-                    cout << board[i + 1][j - 1] << "\n";
-                    cout << i + 5 << " " << j - 5 << "\n";
-
-                    return;
-                }
-                cnt = 1;
-            }
-        }
-    }
-
     cout << "0\n";
+    return;
 }
 
 int main()
