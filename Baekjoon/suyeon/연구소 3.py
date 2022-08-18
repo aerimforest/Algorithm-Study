@@ -43,6 +43,9 @@ def spread_virus(matrix, x, y, time):
         if matrix[nx][ny] == EMPTY:
             matrix[nx][ny] = time
             next_steps.append((nx, ny))
+        elif matrix[nx][ny] == DEACTIVATE_VIRUS:
+            matrix[nx][ny] = 0
+            next_steps.append((nx, ny))
 
     return next_steps
 
