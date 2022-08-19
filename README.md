@@ -8,7 +8,7 @@
 
 ### ✍️&nbsp;&nbsp;문제 풀이
 - `오후 11시`까지 문제를 풀어주세요.
-- 풀이하신 코드는 `본인 브랜치`에 커밋 후 `pr`을 생성해서 `메인 브랜치`에 합쳐주세요.
+- 풀이하신 코드는 `본인 브랜치`에 커밋 후 `pr`을 생성해서 `오후 11시`까지 `메인 브랜치`에 합쳐주세요.
 - pr 생성하실 때는 본인 이름의 `라벨`을 추가해주세요.
   - `파일명`: 문제 이름
   - `커밋 메세지 규칙`: [문제 번호] 문제 이름 (ex. [2839] 설탕 배달)
@@ -43,3 +43,4 @@
 |[수빈](https://github.com/subinmun1997)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=subeloper)](https://solved.ac/subeloper)|  
 |[서현영](https://github.com/magnolia5)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=magnolia5)](https://solved.ac/magnolia5)|  
 |[강수아](https://github.com/rkdtndk99)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=christinek99)](https://solved.ac/christinek99)|
+|[김성용](https://github.com/soeng-dev)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=tjddyd1565)](https://solved.ac/tjddyd1565)|
