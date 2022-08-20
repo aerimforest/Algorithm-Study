@@ -1,10 +1,8 @@
-package baekjoon.implementation;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class RoundRobin {
+public class Main {
 
     /**
      * 백준(17609) - 회문(https://www.acmicpc.net/problem/17609)
