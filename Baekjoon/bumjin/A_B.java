@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Main {
+public class A_B {
 
     /**
      * 백준(12904) - A와 B(https://www.acmicpc.net/problem/12904)
