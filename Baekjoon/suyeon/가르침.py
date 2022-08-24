@@ -4,30 +4,36 @@ from itertools import combinations
 essential = {'a', 'c', 'i', 'n', 't'}
 
 
-def is_read(word, k_alphabet):
-    for alphabet in word:
-        if alphabet not in k_alphabet and alphabet not in essential:
-            return False
-
-    return True
-
-
 def get_max_words():
     max_words = 0
 
-    for k_alphabet in combinations(base - essential, k - len(essential)):
-        max_words = max(max_words, sum([True for word in words if is_read(word, set(k_alphabet))]))
+    for alphabet_list in combinations(other_set, k - 5):
+        alphabet_list = set(alphabet_list) | essential
+
+        count = 0
+
+        for word in words:
+            if word <= alphabet_list:
+                count += 1
+
+        if max_words < count:
+            max_words = count
 
     return max_words
 
 
-n, k = map(int, input().split())
-words, base = [], set()
+n, k = map(int, sys.stdin.readline().split())
+
+words, all_set = [], set()
 
 for _ in range(n):
-    temp = sys.stdin.readline().strip()[4:-4]
+    temp = set(sys.stdin.readline().strip())
 
+    all_set |= temp
     words.append(temp)
-    base.update(list(temp))
 
-print(get_max_words() if k - len(essential) >= 0 else 0)
+if k < 5:
+    print(0)
+else:
+    other_set = all_set - essential
+    print(get_max_words() if len(other_set) > k - 5 else n)
