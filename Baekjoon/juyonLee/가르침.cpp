@@ -1,8 +1,8 @@
-//1062
 #include <iostream>
 using namespace std;
 int n, k, word;
 int arr[51];
+//1062
 
 int backtracking(int depth, int idx)
 {
