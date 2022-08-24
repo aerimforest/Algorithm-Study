@@ -1,8 +1,8 @@
-//3055
 #include <iostream>
 #include <string>
 #include <queue>
 using namespace std;
+//3055
 
 const int MAX = 50;
 typedef struct{
