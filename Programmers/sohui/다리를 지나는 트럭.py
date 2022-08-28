@@ -14,7 +14,7 @@ def solution(bridge_length, weight, truck_weights):
         if truck_weights:
             if bridge_weight + truck_weights[0] <= weight:
                 left = truck_weights.popleft()
-                bridge_weight += left
+              달  bridge_weight += left
                 bridge.append(left)
             else:
                 bridge.append(0)
