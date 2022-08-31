@@ -22,21 +22,24 @@
 <br/><br/>
 
 ### 🔗&nbsp;&nbsp;문제 출제 순서
-|8/14(일)|8/15(월)|8/16(화)|8/17(수)|8/18(목)|8/19(금)|8/20(토)|
+|||||9/1(목)|9/2(금)|9/3(토)|
 |-|-|-|-|-|-|-|
-|`범진`|`예림`|`주연`|`수연`|`예림`|`소희`|`현영`|
-|8/21(일)|8/22(월)|8/23(화)|8/24(수)|8/25(목)|8/26(금)|8/27(토)|
-|`수빈`|`범진`|`성용`|`주연`|`수연`|`예림`|`소희`|
-|8/28(일)|8/29(월)|8/30(화)|8/31(수)|
-|`현영`|`수빈`|`범진`|`성용`|  
+|||||`예림`|`현영`|`수빈`|
+|9/4(일)|9/5(월)|9/6(화)|9/7(수)|9/8(목)|9/9(금)|9/10(토)|
+|`다현`|`주연`|`수연`|`수아`|`성용`|`예림`|`현영`|
+|9/11(일)|9/12(월)|9/13(화)|9/14(수)|9/15(목)|9/16(금)|9/17(토)|
+|`수빈`|`다현`|`주연`|`수연`|`수아`|`성용`|`예림`|
+|9/18(일)|9/19(월)|9/20(화)|9/21(수)|9/22(목)|9/23(금)|9/24(토)|
+|`현영`|`수빈`|`다현`|`주연`|`수연`|`수아`|`성용`|
+|9/25(일)|9/26(월)|9/27(화)|9/28(수)|9/29(목)|9/30(금)|
+|`예림`|`현영`|`수빈`|`다현`|`주연`|`수연`|
 
 <br/><br/>
 
 ### 👥&nbsp;&nbsp;Member
 |이름|Solved.ac|이름|Solved.ac|
 |--|--|--|--|
-|[김예림](https://github.com/aerimforest)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=yerim5287)](https://solved.ac/yerim5287)|[신소희](https://github.com/shinsohui)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=sohui0113)](https://solved.ac/sohui0113)|
-|[이범진](https://github.com/venzym)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=venzym)](https://solved.ac/venzym)|[조수연](https://github.com/soo5717)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=soo5717)](https://solved.ac/soo5717)|  
+|[김예림](https://github.com/aerimforest)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=yerim5287)](https://solved.ac/yerim5287)|[조수연](https://github.com/soo5717)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=soo5717)](https://solved.ac/soo5717)|  
 |[이주연](https://github.com/juyonLee00)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=lindsay0129)](https://solved.ac/lindsay0129)|[문수빈](https://github.com/subinmun1997)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=subeloper)](https://solved.ac/subeloper)|  
 |[서현영](https://github.com/magnolia5)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=magnolia5)](https://solved.ac/magnolia5)|[강수아](https://github.com/rkdtndk99)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=christinek99)](https://solved.ac/christinek99)|
 |[김성용](https://github.com/soeng-dev)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=tjddyd1565)](https://solved.ac/tjddyd1565)|[이다현]()
