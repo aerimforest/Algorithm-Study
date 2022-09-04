@@ -43,23 +43,23 @@ int main()
                 pointer[i] = (pointer[i] + k) % M;
             }
         }
-        for (int i = 1; i <= N; ++i)
-        {
-            int p = pointer[i];
-            for (int j = 0; j < M; ++j)
-            {
-                if (circle[i][(p + j) % M] == DEL)
-                {
-                    cout << "X ";
-                }
-                else
-                {
-                    cout << circle[i][(p + j) % M] << " ";
-                }
-            }
-            cout << "\n";
-        }
-        cout << "\n";
+        // for (int i = 1; i <= N; ++i)
+        // {
+        //     int p = pointer[i];
+        //     for (int j = 0; j < M; ++j)
+        //     {
+        //         if (circle[i][(p + j) % M] == DEL)
+        //         {
+        //             cout << "X ";
+        //         }
+        //         else
+        //         {
+        //             cout << circle[i][(p + j) % M] << " ";
+        //         }
+        //     }
+        //     cout << "\n";
+        // }
+        // cout << "\n";
 
         // 인접
         vector<pair<int, int>> adj;
@@ -67,7 +67,7 @@ int main()
         for (int i = 1; i <= N; ++i)
         {
             int p = pointer[i];
-            for (int j = 0; j < N; ++j)
+            for (int j = 0; j < M; ++j)
             {
                 int x = i, y = (j + p) % M;
                 if (circle[x][y] == DEL)
@@ -128,23 +128,23 @@ int main()
             }
         }
 
-        for (int i = 1; i <= N; ++i)
-        {
-            int p = pointer[i];
-            for (int j = 0; j < M; ++j)
-            {
-                if (circle[i][(p + j) % M] == DEL)
-                {
-                    cout << "X ";
-                }
-                else
-                {
-                    cout << circle[i][(p + j) % M] << " ";
-                }
-            }
-            cout << "\n";
-        }
-        cout << "\n";
+        // for (int i = 1; i <= N; ++i)
+        // {
+        //     int p = pointer[i];
+        //     for (int j = 0; j < M; ++j)
+        //     {
+        //         if (circle[i][(p + j) % M] == DEL)
+        //         {
+        //             cout << "X ";
+        //         }
+        //         else
+        //         {
+        //             cout << circle[i][(p + j) % M] << " ";
+        //         }
+        //     }
+        //     cout << "\n";
+        // }
+        // cout << "\n";
     }
 
     int ans = 0;
