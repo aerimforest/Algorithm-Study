@@ -1,7 +1,6 @@
 # (참고)
 
 import sys
-
 input = sys.stdin.readline
 
 times = list(input().split())
