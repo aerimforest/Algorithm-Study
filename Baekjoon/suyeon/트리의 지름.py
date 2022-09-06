@@ -1,32 +1,38 @@
-# 메모리 초과 - 플로이드 워셜
-
 import sys
+from collections import deque
 
 input = lambda: sys.stdin.readline()
 
-n = int(input())
-graph = [[int(1e9)] * (n + 1) for _ in range(n + 1)]
 
-for x in range(1, n + 1):
-    for y in range(1, n + 1):
-        if x == y:
-            graph[x][y] = 0
+def bfs(start_node):
+    visited = [False] * (n + 1)
+    visited[start_node] = True
+
+    queue = deque([(start_node, 0)])
+
+    max_node, max_distance = 0, 0
+
+    while queue:
+        current_node, current_distance = queue.popleft()
+
+        for node, distance in graph[current_node]:
+            if not visited[node]:
+                visited[node] = True
+                queue.append((node, current_distance + distance))
+
+                if max_distance < current_distance + distance:
+                    max_node, max_distance = node, current_distance + distance
+
+    return max_node, max_distance
+
+
+n = int(input())
+graph = [[] * (n + 1) for _ in range(n + 1)]
 
 for _ in range(n - 1):
     parent, child, weight = map(int, input().split())
 
-    graph[parent][child] = weight
-    graph[child][parent] = weight
+    graph[parent].append([child, weight])
+    graph[child].append([parent, weight])
 
-for k in range(1, n + 1):
-    for x in range(1, n + 1):
-        for y in range(1, n + 1):
-            graph[x][y] = min(graph[x][y], graph[x][k] + graph[k][y])
-
-answer = 0
-
-for x in range(1, n + 1):
-    for y in range(1, n + 1):
-        answer = max(answer, graph[x][y])
-
-print(answer)
+print(bfs(bfs(1)[0])[1])
