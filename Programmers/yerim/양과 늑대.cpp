@@ -1,5 +1,6 @@
 // [92343] 양과 늑대
 // dfs, 완전 탐색
+// 2022 KAKAO BLIND RECRUITMENT 5번
 #include <string>
 #include <vector>
 using namespace std;
