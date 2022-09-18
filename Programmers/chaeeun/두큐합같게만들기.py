@@ -1,3 +1,5 @@
+# [참고]
+
 from collections import deque
 def solution(queue1, queue2):
     answer = 0
