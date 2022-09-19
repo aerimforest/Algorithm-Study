@@ -23,6 +23,14 @@ int solve(int x, int y, int d1, int d2)
         edge[x + i][y + i] = true;
         edge[x + d1 + i][y - d1 + i] = true;
     }
+    // for (int i = 1; i <= N; ++i)
+    // {
+    //     for (int j = 1; j <= N; ++j)
+    //     {
+    //         cout << edge[i][j];
+    //     }
+    //     cout << "\n";
+    // }
 
     int P[6] = {0, 0, 0, 0, 0, 0};
     // 1
@@ -75,10 +83,14 @@ int solve(int x, int y, int d1, int d2)
     }
     P[5] = total - P[1] - P[2] - P[3] - P[4];
 
-    for (int i = 1; i <= 5; ++i)
+    int m = P[1], M = P[1];
+    for (int i = 2; i <= 5; ++i)
     {
-        cout << P[i] << " ";
+        m = min(m, P[i]);
+        M = max(M, P[i]);
     }
+
+    return M - m;
 }
 
 int main()
@@ -96,25 +108,23 @@ int main()
         }
     }
 
-    solve(4, 3, 1, 1);
-
-    // for (int x = 1; x <= N; ++x)
-    // {
-    //     for (int y = 1; y <= N; ++y)
-    //     {
-    //         for (int d1 = 1; d1 <= N; ++d1)
-    //         {
-    //             for (int d2 = 1; d2 <= N; ++d2)
-    //             {
-    //                 if (x + d1 + d2 <= N && y - d1 >= 1 && y + d2 <= N)
-    //                 {
-    //                     ans = min(ans, solve(x, y, d1, d2));
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-    // cout << ans << "\n";
+    for (int x = 1; x <= N; ++x)
+    {
+        for (int y = 1; y <= N; ++y)
+        {
+            for (int d1 = 1; d1 <= N; ++d1)
+            {
+                for (int d2 = 1; d2 <= N; ++d2)
+                {
+                    if (x + d1 + d2 <= N && y - d1 >= 1 && y + d2 <= N)
+                    {
+                        ans = min(ans, solve(x, y, d1, d2));
+                    }
+                }
+            }
+        }
+    }
+    cout << ans << "\n";
 
     return 0;
 }
