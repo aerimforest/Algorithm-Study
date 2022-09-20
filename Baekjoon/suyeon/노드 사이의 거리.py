@@ -1,32 +1,38 @@
-# 시간 초과!
-
 import sys
+from collections import deque
 
 input = lambda: sys.stdin.readline()
 
-INF = int(1e9)
+
+def bfs(start_node, end_node):
+    visited = [False] * (n + 1)
+    visited[start_node] = True
+
+    queue = deque([(start_node, 0)])
+
+    while queue:
+        current_node, current_distance = queue.popleft()
+
+        if current_node == end_node:
+            return current_distance
+
+        for node, distance in graph[current_node]:
+            if not visited[node]:
+                visited[node] = True
+                queue.append((node, current_distance + distance))
+
 
 n, m = map(int, input().split())
 
-graph = [[INF] * (n + 1) for _ in range(n + 1)]
-
-for a in range(1, n + 1):
-    for b in range(1, n + 1):
-        if a == b:
-            graph[a][b] = 0
+graph = [[] for _ in range(n + 1)]
 
 for _ in range(n - 1):
-    a, b, distance = map(int, input().split())
+    a, b, c = map(int, input().split())
 
-    graph[a][b] = distance
-    graph[b][a] = distance
-
-for k in range(1, n + 1):
-    for a in range(1, n + 1):
-        for b in range(1, n + 1):
-            graph[a][b] = min(graph[a][b], graph[a][k] + graph[k][b])
+    graph[a].append([b, c])
+    graph[b].append([a, c])
 
 for _ in range(m):
     a, b = map(int, input().split())
 
-    print(graph[a][b])
+    print(bfs(a, b))
