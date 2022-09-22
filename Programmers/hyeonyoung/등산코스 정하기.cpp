@@ -4,49 +4,77 @@
 
 using namespace std;
 
+int V[50001]; // 0: 쉼터 1: 출입구 2: 산봉우리
+struct peak
+{
+    int cur, intensity;
+
+    bool operator<(const peak &x) const
+    {
+        return this->intensity > x.intensity;
+    }
+};
+vector<peak> E[50001];
+int D[50001];
 const int INF = 987654321;
-vector<int> solution(int n, vector<vector<int>> paths, vector<int> gates, vector<int> summits)
+
+vector<int>
+solution(int n, vector<vector<int>> paths, vector<int> gates, vector<int> summits)
 {
     // init
-    int D[n + 1][n + 1];
-    for (int i = 1; i <= n; ++i)
+    for (vector<int> path : paths)
     {
-        for (int j = 1; j <= n; ++j)
-        {
-            D[i][j] = INF;
-        }
-        D[i][i] = 0;
+        E[path[0]].push_back({path[1], path[2]});
+        E[path[1]].push_back({path[0], path[2]});
+    }
+    for (int g : gates)
+    {
+        V[g] = 1;
+    }
+    for (int s : summits)
+    {
+        V[s] = 2;
     }
 
-    for (vector<int> p : paths)
-    {
-        D[p[0]][p[1]] = min(D[p[0]][p[1]], p[2]);
-        D[p[1]][p[0]] = min(D[p[1]][p[0]], p[2]);
-    }
-
-    for (int k = 1; k <= n; ++k)
+    // summit -> gate
+    vector<int> answer = {0, INF};
+    for (int s : summits)
     {
         for (int i = 1; i <= n; ++i)
         {
-            for (int j = 1; j <= n; ++j)
-            {
-                D[i][j] = min(D[i][j], max(D[i][k], D[k][j]));
-            }
+            D[i] = INF;
         }
-    }
+        priority_queue<peak> pq;
 
-    vector<int> answer = {0, INF};
-    for (int g : gates)
-    {
-        for (int s : summits)
+        D[s] = 0;
+        pq.push({s, 0});
+
+        while (!pq.empty())
         {
-            if (answer[1] > D[g][s])
+            int cur = pq.top().cur, intensity = pq.top().intensity;
+            pq.pop();
+
+            if (V[cur] == 1)
             {
-                answer = {s, D[g][s]};
+                if (answer[1] > intensity)
+                {
+                    answer = {s, intensity};
+                }
+                else if (answer[1] == intensity && answer[0] > s)
+                {
+                    answer = {s, intensity};
+                }
+
+                break;
             }
-            else if (answer[1] == D[g][s] && answer[0] > s)
+
+            for (peak next : E[cur])
             {
-                answer = {s, D[g][s]};
+                if (V[next.cur] != 2 && D[next.cur] > max(intensity, next.intensity))
+                {
+                    D[next.cur] = max(intensity, next.intensity);
+                    pq.push({next.cur, D[next.cur]});
+                }
             }
         }
     }
