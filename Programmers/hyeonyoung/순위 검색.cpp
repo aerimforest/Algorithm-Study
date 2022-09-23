@@ -1,17 +1,13 @@
 #include <string>
 #include <vector>
+#include <map>
+#include <algorithm>
 
 using namespace std;
 
-struct applicant
-{
-    int input;
-    int score;
-};
-
 vector<int> solution(vector<string> info, vector<string> query)
 {
-    vector<applicant> applicants;
+    map<int, vector<int>> applicants;
     for (string i : info)
     {
         int input = 0;
@@ -66,7 +62,11 @@ vector<int> solution(vector<string> info, vector<string> query)
         }
         prev = cur + 1;
         // 점수
-        applicants.push_back({input, stoi(i.substr(prev))});
+        applicants[input].push_back(stoi(i.substr(prev)));
+    }
+    for (pair<int, vector<int>> a : applicants)
+    {
+        std::sort(applicants[a.first].begin(), applicants[a.first].end());
     }
 
     vector<int> answer;
@@ -147,12 +147,34 @@ vector<int> solution(vector<string> info, vector<string> query)
         // 점수
         int s = stoi(q.substr(prev));
 
+        // 찾기
         int cnt = 0;
-        for (applicant a : applicants)
+        for (pair<int, vector<int>> a : applicants)
         {
-            if ((a.input & x) == a.input && a.score >= s)
+            if ((a.first & x) == a.first)
             {
-                cnt++;
+                int l = 0, r = a.second.size();
+                while (l < r)
+                {
+                    int m = (l + r) / 2;
+                    if (a.second[m] < s)
+                    {
+                        l = m + 1;
+                    }
+                    else
+                    {
+                        r = m;
+                    }
+                }
+                // cout << bitset<32>(a.first) << " ";
+                // cout << s << " " << l << " " << r << "\n";
+                // for (int i : a.second)
+                // {
+                //     cout << i << " ";
+                // }
+                // cout << "\n";
+
+                cnt += a.second.size() - l;
             }
         }
         answer.push_back(cnt);
