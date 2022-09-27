@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class 수식최대화 {
 
     private static char[] cal = {'+', '-', '*'};
     private static char[] temp = new char[3];

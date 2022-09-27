@@ -1,6 +1,8 @@
+package Programmers.bumjin;
+
 import java.util.*;
 
-class Solution {
+class 프린터 {
     public int solution(int[] priorities, int location) {
         int answer = 0;
 
