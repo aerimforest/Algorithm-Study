@@ -2,7 +2,7 @@ package Programmers.bumjin;
 
 import java.util.*;
 
-class Solution {
+class 배달 {
     private static final int INF = (int)1e9;
     private static ArrayList<ArrayList<Node>> graph;
     private static int[] d;
