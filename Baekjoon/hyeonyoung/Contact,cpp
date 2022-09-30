@@ -1,0 +1,42 @@
+// 220930_BOJ_1013
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int T;
+// DFA
+int mov[10][2] = {{1, 3}, {9, 2}, {1, 3}, {4, 9}, {5, 9}, {5, 6}, {1, 7}, {8, 7}, {5, 2}, {9, 9}};
+
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    // (100+1+ | 01)+
+
+    cin >> T;
+    while (T-- > 0)
+    {
+        string input;
+        cin >> input;
+
+        int cur = 0;
+        for (char c : input)
+        {
+            cur = mov[cur][c - '0'];
+        }
+
+        if (cur == 2 || cur == 6 || cur == 7)
+        {
+            cout << "YES\n";
+        }
+        else
+        {
+            cout << "NO\n";
+        }
+    }
+
+    return 0;
+}
