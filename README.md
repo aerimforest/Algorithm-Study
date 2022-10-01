@@ -19,6 +19,7 @@
     - Baekjoon/이름/파일명
     - Programmers/이름/파일명
     
+
 <br/><br/>
 
 ### 🔗&nbsp;&nbsp;문제 출제 순서
@@ -41,8 +42,8 @@
 ### 👥&nbsp;&nbsp;Member
 |이름|Solved.ac|이름|Solved.ac|
 |--|--|--|--|
-|[김예림](https://github.com/aerimforest)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=yerim5287)](https://solved.ac/yerim5287)|[고주희](https://github.com/ko509)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=budludl)](https://solved.ac/budludl)|  
-|[이지유](https://github.com/jiyoulee)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=earth)](https://solved.ac/earth)|[문수빈](https://github.com/subinmun1997)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=subeloper)](https://solved.ac/subeloper)|  
+|[김예림](https://github.com/aerimforest)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=yerim5287)](https://solved.ac/yerim5287)|[고주희](https://github.com/ko509)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=budludl)](https://solved.ac/budludl)|
+|[이지유](https://github.com/jiyoulee)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=earth)](https://solved.ac/earth)|[문수빈](https://github.com/subinmun1997)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=subeloper)](https://solved.ac/subeloper)|
 |[서현영](https://github.com/magnolia5)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=magnolia5)](https://solved.ac/magnolia5)|[강수아](https://github.com/rkdtndk99)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=christinek99)](https://solved.ac/christinek99)|
 |[김성용](https://github.com/soeng-dev)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=tjddyd1565)](https://solved.ac/tjddyd1565)|[백채은](https://github.com/ABChaeeun)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=ceunnii)](https://solved.ac/ceunnii)|
-|[이재형](https://github.com/jhl8041)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=jhl8041)](https://solved.ac/jhl8041)|[](https://github.com/깃헙아이디)||
+|[이재형](https://github.com/jhl8041)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=jhl8041)](https://solved.ac/jhl8041)|[김동완](https://github.com/holawan)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=asdf134652)](https://solved.ac/asdf134652)|
