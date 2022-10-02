@@ -19,28 +19,31 @@
     - Baekjoon/이름/파일명
     - Programmers/이름/파일명
     
+
 <br/><br/>
 
 ### 🔗&nbsp;&nbsp;문제 출제 순서
-|||||9/1(목)|9/2(금)|9/3(토)|
+|||||||10/1(토)|
 |-|-|-|-|-|-|-|
-|||||`예림`|`현영`|`수빈`|
-|9/4(일)|9/5(월)|9/6(화)|9/7(수)|9/8(목)|9/9(금)|9/10(토)|
-|`다현`|`주연`|`수연`|`수아`|`성용`|`예림`|`현영`|
-|9/11(일)|9/12(월)|9/13(화)|9/14(수)|9/15(목)|9/16(금)|9/17(토)|
-|`수빈`|`채은`|`주연`|`수연`|`수아`|`성용`|`예림`|
-|9/18(일)|9/19(월)|9/20(화)|9/21(수)|9/22(목)|9/23(금)|9/24(토)|
-|`현영`|`수빈`|`채은`|`예림`|`수연`|`수아`|`성용`|
-|9/25(일)|9/26(월)|9/27(화)|9/28(수)|9/29(목)|9/30(금)|
-|`예림`|`현영`|`수빈`|`채은`|`예림`|`수연`|
+|||||||`주희`|
+|10/2(일)|10/3(월)|10/4(화)|10/5(수)|10/6(목)|10/7(금)|10/8(토)|
+|`동완`|`예림`|`현영`|`예림`|`성용`|`수빈`|`재형`|
+|10/9(일)|10/10(월)|10/11(화)|10/12(수)|10/13(목)|10/14(금)|10/15(토)|
+|`채은`|`주희`|`동완`|`예림`|`현영`|`예림`|`성용`|
+|10/16(일)|10/17(월)|10/18(화)|10/19(수)|10/20(목)|10/21(금)|10/22(토)|
+|`수빈`|`재형`|`채은`|`주희`|`수아`|`동완`|`예림`|
+|10/23(일)|10/24(월)|10/25(화)|10/26(수)|10/27(목)|10/28(금)|10/29(토)|
+|`현영`|`예림`|`성용`|`수빈`|`재형`|`채은`|`주희`|
+|10/30(일)|10/31(월)||||||
+|`수아`|`동완`|||||
 
 <br/><br/>
 
 ### 👥&nbsp;&nbsp;Member
 |이름|Solved.ac|이름|Solved.ac|
 |--|--|--|--|
-|[김예림](https://github.com/aerimforest)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=yerim5287)](https://solved.ac/yerim5287)|[고주희](https://github.com/ko509)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=budludl)](https://solved.ac/budludl)|  
-|[이지유](https://github.com/jiyoulee)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=earth)](https://solved.ac/earth)|[문수빈](https://github.com/subinmun1997)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=subeloper)](https://solved.ac/subeloper)|  
+|[김예림](https://github.com/aerimforest)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=yerim5287)](https://solved.ac/yerim5287)|[고주희](https://github.com/ko509)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=budludl)](https://solved.ac/budludl)|
+|[김동완](https://github.com/holawan)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=asdf134652)](https://solved.ac/asdf134652)|[문수빈](https://github.com/subinmun1997)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=subeloper)](https://solved.ac/subeloper)|
 |[서현영](https://github.com/magnolia5)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=magnolia5)](https://solved.ac/magnolia5)|[강수아](https://github.com/rkdtndk99)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=christinek99)](https://solved.ac/christinek99)|
 |[김성용](https://github.com/soeng-dev)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=tjddyd1565)](https://solved.ac/tjddyd1565)|[백채은](https://github.com/ABChaeeun)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=ceunnii)](https://solved.ac/ceunnii)|
-|[이재형](https://github.com/jhl8041)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=jhl8041)](https://solved.ac/jhl8041)|[](https://github.com/깃헙아이디)||
+|[이재형](https://github.com/jhl8041)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=jhl8041)](https://solved.ac/jhl8041)||
