@@ -27,13 +27,13 @@
 |-|-|-|-|-|-|-|
 |||||||`주희`|
 |10/2(일)|10/3(월)|10/4(화)|10/5(수)|10/6(목)|10/7(금)|10/8(토)|
-|`동완`|`예림`|`현영`|`지유`|`성용`|`수빈`|`재형`|
+|`동완`|`예림`|`현영`|`예림`|`성용`|`수빈`|`재형`|
 |10/9(일)|10/10(월)|10/11(화)|10/12(수)|10/13(목)|10/14(금)|10/15(토)|
-|`채은`|`주희`|`동완`|`예림`|`현영`|`지유`|`성용`|
+|`채은`|`주희`|`동완`|`예림`|`현영`|`예림`|`성용`|
 |10/16(일)|10/17(월)|10/18(화)|10/19(수)|10/20(목)|10/21(금)|10/22(토)|
 |`수빈`|`재형`|`채은`|`주희`|`수아`|`동완`|`예림`|
 |10/23(일)|10/24(월)|10/25(화)|10/26(수)|10/27(목)|10/28(금)|10/29(토)|
-|`현영`|`지유`|`성용`|`수빈`|`재형`|`채은`|`주희`|
+|`현영`|`예림`|`성용`|`수빈`|`재형`|`채은`|`주희`|
 |10/30(일)|10/31(월)||||||
 |`수아`|`동완`|||||
 
@@ -43,7 +43,7 @@
 |이름|Solved.ac|이름|Solved.ac|
 |--|--|--|--|
 |[김예림](https://github.com/aerimforest)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=yerim5287)](https://solved.ac/yerim5287)|[고주희](https://github.com/ko509)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=budludl)](https://solved.ac/budludl)|
-|[이지유](https://github.com/jiyoulee)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=earth)](https://solved.ac/earth)|[문수빈](https://github.com/subinmun1997)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=subeloper)](https://solved.ac/subeloper)|
+|[김동완](https://github.com/holawan)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=asdf134652)](https://solved.ac/asdf134652)|[문수빈](https://github.com/subinmun1997)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=subeloper)](https://solved.ac/subeloper)|
 |[서현영](https://github.com/magnolia5)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=magnolia5)](https://solved.ac/magnolia5)|[강수아](https://github.com/rkdtndk99)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=christinek99)](https://solved.ac/christinek99)|
 |[김성용](https://github.com/soeng-dev)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=tjddyd1565)](https://solved.ac/tjddyd1565)|[백채은](https://github.com/ABChaeeun)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=ceunnii)](https://solved.ac/ceunnii)|
-|[이재형](https://github.com/jhl8041)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=jhl8041)](https://solved.ac/jhl8041)|[김동완](https://github.com/holawan)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=asdf134652)](https://solved.ac/asdf134652)|
+|[이재형](https://github.com/jhl8041)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=jhl8041)](https://solved.ac/jhl8041)||
