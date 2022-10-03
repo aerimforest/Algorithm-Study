@@ -1,32 +1,38 @@
 // [1182] 부분수열의 합
-// 브루트포스, 백트래킹
 #include <iostream>
 using namespace std;
 
-int n, s, ans = 0, num[21];
+int n, s, ans, arr[21];
 
 void input()
 {
     cin >> n >> s;
-    for(int i = 0 ; i < n ; i ++) {
-        cin >> num[i];
-    }   
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
 }
 
-void solve(int index, int sum)
+void dfs(int idx, int sum, int cnt)
 {
-    if(index == n) {
-        if(sum == s) ans++;
+    if(idx == n) {
+        if(sum == s && cnt >= 1) {
+            ans++;
+        }
         return;
     }
-    solve(index + 1, sum); // index번째 요소를 더하지 않음
-    solve(index + 1, sum + num[index]); // index번째 요소를 더함
+
+    dfs(idx + 1, sum, cnt);
+    dfs(idx + 1, sum + arr[idx], cnt + 1);
 }
 
 int main(void)
 {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
     input();
-    solve(0, 0);
-    ans = (s == 0) ? ans - 1 : ans; // s = 0인 경우 공집합 제거
+    dfs(0, 0, 0);
     cout << ans << '\n';
+
+    return 0;
 }
