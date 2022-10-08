@@ -1,7 +1,7 @@
 package Baekjoon.jaehyung;
 
 /**
- * 경사로 [골드 4] (미성공)
+ * 경사로 [골드 4] (성공)
  * https://www.acmicpc.net/problem/14890
  */
 
@@ -16,7 +16,7 @@ public class 경사로 {
   static int cnt = 0;
 
   private void crossingRoad(int[] road, int L) {
-    int tmpL = 0;
+//    System.out.println("도로: " + Arrays.toString(road));
     int[] visited = new int[road.length];
 
     // 한번에 높이 차이가 2이상 나는 부분이 있는지 전체 체크
@@ -28,52 +28,74 @@ public class 경사로 {
 
     for (int i=1; i<road.length; i++) {
 
+      // 내리막일때 높은곳의 오른쪽 확인, 오르막일 때 높은곳의 왼쪽 확인
       boolean canCross = true;
-
-      // 경사를 발견했을 때 높은 곳에서 양쪽 검사
       if (road[i] - road[i-1] == -1) {
-        canCross = checkLeftRight(i-1, L, road, visited);
+        canCross = checkRight(i-1, L, road, visited);
       } else if (road[i] - road[i-1] == 1){
-        canCross = checkLeftRight(i, L, road, visited);
+        canCross = checkLeft(i, L, road, visited);
       }
 
       if (!canCross){
         return;
       }
     }
-    System.out.println(Arrays.toString(road));
+//    System.out.println("건넜습니다.");
+//    System.out.println();
     cnt++;
   }
 
-  // 높은곳에서 양옆 검사
-  private boolean checkLeftRight(int peakIdx, int L, int[] road, int[] visited) {
+  private boolean checkRight(int peakIdx, int L, int[] road, int[] visited) {
+    int rightCnt = 0;
+    for (int i=1; i<=L; i++) {
+      int nextIdx = peakIdx + i;
+      if (nextIdx > road.length -1) {
+        break;
+      }
+      if (visited[nextIdx] == 1){
+        return false;
+      }
+      rightCnt++;
+      visited[nextIdx] = 1;
+    }
 
+    if (rightCnt > 0 && rightCnt < L) {
+//      System.out.println("내리막이지만 앞 도로를 충분히 깔 수 없었습니다.");
+      return false;
+    }
+    return true;
+  }
+
+  private boolean checkLeft(int peakIdx, int L, int[] road, int[] visited) {
     int leftCnt = 0;
     for (int i=1; i<=L; i++) {
       int nextIdx = peakIdx - i;
       if (nextIdx < 0) {
         break;
       }
-
       if (visited[nextIdx] == 1){
         return false;
       }
-
       leftCnt++;
+      visited[nextIdx] = 1;
     }
 
     if (leftCnt > 0 && leftCnt < L) {
+//      System.out.println("오르막이지만 오르기 전 도로를 충분히 깔 수 없었습니다.");
       return false;
     }
-
     return true;
   }
 
   public void solution(int N, int L, int[][] map) {
-    printMap(map);
-
+//    printMap(map);
     for (int r=0; r<N; r++) {
       crossingRoad(map[r], L);
+      int[] col = new int[N];
+      for (int c=0; c<N; c++) {
+        col[c] = map[c][r];
+      }
+      crossingRoad(col, L);
     }
 
     System.out.println(cnt);
