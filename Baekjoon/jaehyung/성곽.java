@@ -1,7 +1,7 @@
 package Baekjoon.jaehyung;
 
 /**
- * 성곽 [골드 4] (미성공)
+ * 성곽 [골드 4] (성공)
  * https://www.acmicpc.net/problem/2234
  */
 
@@ -15,31 +15,104 @@ import java.util.StringTokenizer;
 public class 성곽 {
 
   static int[][] visited;
+  static int tmpRoomSize = 0;
+  static int[] dr = new int[] {-1, 0, 1, 0};
+  static int[] dc = new int[] {0, -1, 0, 1};
 
-  private void findIsland(int r, int c, int[][] map){
+  private void searchIsland(int r, int c, Room[][] roomMap){
+    if (r < 0 || r > roomMap.length - 1 || c < 0 || c > roomMap[0].length - 1){
+      return;
+    }
 
+    if (visited[r][c] == 1) {
+      return;
+    }
+
+    visited[r][c] = 1;
+    tmpRoomSize++;
+
+    for (int i=0; i<4; i++){
+      if (roomMap[r][c].up && i == 0){
+        continue;
+      } else if (roomMap[r][c].left && i == 1) {
+        continue;
+      } else if (roomMap[r][c].down && i == 2) {
+        continue;
+      } else if (roomMap[r][c].right && i == 3) {
+        continue;
+      }
+      searchIsland(r + dr[i], c + dc[i], roomMap);
+    }
   }
 
   public void solution(int R, int C, int[][] map) {
 //    System.out.println(Arrays.deepToString(map));
-
     Room[][] roomMap = new Room[R][C];
-
     for (int r=0; r<R; r++){
       for (int c=0; c<C; c++){
         roomMap[r][c] = new Room(map[r][c]);
       }
     }
 
+    int roomCnt = 0;
+    int largestRoomSize = 0;
+    int largestRoomSizeAfterRemoveWall = 0;
+
     for (int r=0; r<R; r++){
       for (int c=0; c<C; c++){
         if (visited[r][c] == 0){
-
+          searchIsland(r,c,roomMap);
+          largestRoomSize= Math.max(largestRoomSize, tmpRoomSize);
+          tmpRoomSize = 0;
+          roomCnt++;
         }
       }
     }
 
+    visited = new int[R][C];
 
+    for (int r=0; r<R; r++){
+      for (int c=0; c<C; c++){
+        int currWall = roomMap[r][c].wall;
+        for (int i=0; i<4; i++){
+          if (i==0){
+            if (!roomMap[r][c].up){
+              continue;
+            } else {
+              roomMap[r][c].up = false;
+            }
+          } else if (i==1){
+            if (!roomMap[r][c].left){
+              continue;
+            } else {
+              roomMap[r][c].left = false;
+            }
+          } else if (i==2){
+            if (!roomMap[r][c].down){
+              continue;
+            } else {
+              roomMap[r][c].down = false;
+            }
+          } else if (i==3){
+            if (!roomMap[r][c].right){
+              continue;
+            } else {
+              roomMap[r][c].right = false;
+            }
+          }
+
+          searchIsland(r,c,roomMap);
+          largestRoomSizeAfterRemoveWall= Math.max(largestRoomSizeAfterRemoveWall, tmpRoomSize);
+          tmpRoomSize = 0;
+          roomMap[r][c] = new Room(currWall);
+          visited = new int[R][C];
+        }
+      }
+    }
+
+    System.out.println(roomCnt);
+    System.out.println(largestRoomSize);
+    System.out.println(largestRoomSizeAfterRemoveWall);
   }
 
   public static void main(String[] args) throws IOException {
@@ -69,15 +142,18 @@ public class 성곽 {
 }
 
 class Room {
-  boolean up = false;
-  boolean left = false;
-  boolean down = false;
-  boolean right = false;
+  int wall;
+  boolean up;
+  boolean left;
+  boolean down;
+  boolean right;
 
   public Room(int wall){
-    System.out.println(wall);
-    System.out.println(Integer.toBinaryString(wall));
-    System.out.println(wall & 2);
-    System.out.println();
+    this.wall = wall;
+    this.left = (wall & 1) != 0;
+    this.up = (wall & 2) != 0;
+    this.right = (wall & 4) != 0;
+    this.down = (wall & 8) != 0;
+//    System.out.println(this.up + ", " + this.left + ", " + this.down + ", " + this.right);
   }
 }
