@@ -3,6 +3,7 @@
 num=$1
 name=$2
 
+vim "$name.py"
 git add "$name.py"
 git status
 echo "Would you commit? Enter y for agreement"
