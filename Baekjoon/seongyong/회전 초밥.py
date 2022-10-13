@@ -1,35 +1,54 @@
 import sys
-from collections import defaultdict
 
-def solve():
-    left = 0
-    right = 0
-    dict = defaultdict(int)
-    result = 0
-    # k만큼 먹기
-    while right < k:
-        dict[arr[right]] += 1
-        right += 1
 
-    # c는 반드시 추가
-    dict[c] += 1
+def read_line():
+    return sys.stdin.readline().rstrip()
 
-    # 슬라이딩 윈도우
-    while left < n:
-        result = max(result, len(dict))
-        # 1. 맨 왼쪽 초밥 제거
-        dict[arr[left]] -= 1
-        # 삭제된 왼쪽 초밥이 0 이면 dict 삭제
-        if dict[arr[left]] == 0:
-            del dict[arr[left]]
-        dict[arr[right % n]] += 1
-        left += 1
-        right += 1
 
-    print(result)
-    return
+def split_n_map(split_target, seperator, to_map):
+    return map(to_map, split_target.split(seperator))
 
-if __name__ == "__main__":
-    n, d, k, c = map(int, sys.stdin.readline().split())
-    arr = [int(sys.stdin.readline()) for _ in range(n)]
-    solve()
+
+def read_n_map(to_map, seperator):
+    return split_n_map(read_line(), seperator, to_map)
+
+
+def read_line_as(return_type, element_type, seperator):
+    return return_type(read_n_map(element_type, seperator))
+
+
+def read_lines(line_number, trim_each_line=None):
+    if trim_each_line:
+        return [trim_each_line(read_line()) for _ in range(line_number)]
+    else:
+        return [read_line() for _ in range(line_number)]
+
+
+def read_lines_as(row_type, col_type, seperator, line_number):
+    return [read_line_as(row_type, col_type, seperator)
+            for _ in range(line_number)]
+
+
+def add_iter(iter0, iter2, return_type):
+    return return_type(sum(e) for e in zip(iter0, iter2))
+
+
+# visited = set()
+
+# def dfs_return(dfs_result, current_position):
+#     visited.remove(current_position)
+#     return dfs_result
+
+
+# main logic
+
+num_sushis, num_sushi_type, num_serial_sushis, gift = read_n_map(int, ' ')
+sushis = read_lines(num_sushis, int)
+result = 0
+for i in range(-len(sushis), 0):
+    serial_sushi_types = set(sushis[j] for j in range(i, i + num_serial_sushis))
+    if gift not in serial_sushi_types:
+        serial_sushi_types.add(gift)
+    result = max(result, len(serial_sushi_types))
+
+print(result)
