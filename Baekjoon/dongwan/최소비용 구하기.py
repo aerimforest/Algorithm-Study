@@ -10,6 +10,7 @@ def solution(x) :
 
         if distance[x] < cost :
             continue
+        
         for nr,nc in grid[x] :
             new_cost = cost + nr 
 
@@ -38,4 +39,4 @@ start,end = map(int,input().split())
 
 solution(start)
 
-print(visited[end])
+print(distance[end])
