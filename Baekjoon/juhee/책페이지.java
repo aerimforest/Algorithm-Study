@@ -27,7 +27,6 @@ public class Main {
 				else if(j == n) num[j] += (tmp - 1) * Math.pow(10, len-i-1) + post;
 				else num[j] += (tmp-1)*Math.pow(10, len-i-1);
 			}
-			
 		}
 		StringBuilder sb = new StringBuilder();
 		
