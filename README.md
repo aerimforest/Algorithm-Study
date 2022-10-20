@@ -9,6 +9,7 @@
 ### 📄&nbsp;&nbsp;문제 풀이
 - `오후 11시`까지 문제를 풀어주세요.
 - 풀이하신 코드는 `본인 브랜치`에 커밋 후 `pr`을 생성해서 `오후 11시`까지 `메인 브랜치`에 합쳐주세요.
+- 시도했지만 해결하지 못한 문제가 있는 경우 `풀이 흔적` 또는 `틀린 코드`를 함께 올려주세요.
 - pr 생성하실 때는 본인 이름의 `라벨`을 추가해주세요.
   - `파일명`: 문제 이름
   - `커밋 메세지 규칙`: [문제 번호] 문제 이름 (ex. [2839] 설탕 배달)
@@ -18,6 +19,9 @@
   - `업로드 위치`
     - Baekjoon/이름/파일명
     - Programmers/이름/파일명
+  - `라벨`
+    - `I'm trying 🔥`: 시도했지만 해결하지 못한 문제가 있는 pr
+    - `help 🙋‍♂️`: 도움이 필요한 pr
     
 
 <br/><br/>
@@ -44,5 +48,5 @@
 |--|--|--|--|
 |[김예림](https://github.com/aerimforest)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=yerim5287)](https://solved.ac/yerim5287)|[고주희](https://github.com/ko509)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=budludl)](https://solved.ac/budludl)|
 |[김동완](https://github.com/holawan)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=asdf134652)](https://solved.ac/asdf134652)|[문수빈](https://github.com/subinmun1997)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=subeloper)](https://solved.ac/subeloper)|
-|[서현영](https://github.com/magnolia5)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=magnolia5)](https://solved.ac/magnolia5)|[강수아](https://github.com/rkdtndk99)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=christinek99)](https://solved.ac/christinek99)|
-|[김성용](https://github.com/soeng-dev)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=tjddyd1565)](https://solved.ac/tjddyd1565)|[이재형](https://github.com/jhl8041)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=jhl8041)](https://solved.ac/jhl8041)|||
+|[서현영](https://github.com/magnolia5)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=magnolia5)](https://solved.ac/magnolia5)|[이재형](https://github.com/jhl8041)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=jhl8041)](https://solved.ac/jhl8041)|
+|[김성용](https://github.com/soeng-dev)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=tjddyd1565)](https://solved.ac/tjddyd1565)||
