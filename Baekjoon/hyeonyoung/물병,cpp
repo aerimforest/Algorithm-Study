@@ -1,0 +1,35 @@
+// 221020_BOJ_1052
+
+#include <iostream>
+
+using namespace std;
+
+int N, K;
+
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    cin >> N >> K;
+
+    for (int ans = 0;; ans++)
+    {
+        int n = N + ans, cnt = 0;
+        for (int i = 0; (1 << i) <= n; ++i)
+        {
+            if (n & (1 << i))
+            {
+                cnt++;
+            }
+        }
+
+        if (cnt <= K)
+        {
+            cout << ans;
+            break;
+        }
+    }
+
+    return 0;
+}
