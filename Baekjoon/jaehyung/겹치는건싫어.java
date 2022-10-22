@@ -1,7 +1,7 @@
 package Baekjoon.jaehyung;
 
 /**
- * 겹치는건싫어 [골드 4] (미성공)
+ * 겹치는건싫어 [골드 4] (성공)
  * https://www.acmicpc.net/problem/20922
  */
 
@@ -25,17 +25,17 @@ public class 겹치는건싫어 {
       end = i;
       numCnt[currNum]++;
       if(numCnt[currNum] > K){
-        System.out.println("넘어, i: " + i + ", currNum: " + currNum + ", start: " + start + ", end: " + end);
-        maxLength = Math.max(maxLength, end-start);
-        while(true) {
-          numCnt[start]--;
-          if (numCnt[currNum] <= K) {
-            break;
-          }
-          start++;
+//        System.out.println("넘어, i: " + i + ", currNum: " + currNum + ", start: " + start + ", end: " + end);
+        maxLength = Math.max(maxLength, (end-1)-start+1);
+
+//        System.out.println("oldStart: " + start);
+        while(numCnt[currNum] > K) {
+          numCnt[list[start++]]--;
         }
+//        System.out.println("newStart: " + start);
       }
-      maxLength = Math.max(maxLength, end-start);
+//      System.out.println("end: " + end);
+      maxLength = Math.max(maxLength, end-start+1);
     }
     System.out.println(maxLength);
   }
