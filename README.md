@@ -4,7 +4,7 @@
 - 매주 `일요일`에 출제하시는 분은 새로운 연습과 wiki 페이지를 추가해주세요.
 - 난이도는 백준 `실버3 ~ 골드1`, 프로그래머스 `레벨 1 ~ 4` 사이에서 출제해주세요.
 
-<br/><br/>
+<br><br>
 
 ### 📄&nbsp;&nbsp;문제 풀이
 - `오후 11시`까지 문제를 풀어주세요.
@@ -21,10 +21,19 @@
     - Programmers/이름/파일명
   - `라벨`
     - `I'm trying 🔥`: 시도했지만 해결하지 못한 문제가 있는 pr
-    - `help 🙋‍♂️`: 도움이 필요한 pr
-    
+    - `help 🙋‍♂️`: 도움이 필요한 pr  
 
-<br/><br/>
+<br><br>
+
+### 👥&nbsp;&nbsp;Member
+|이름|Solved.ac|이름|Solved.ac|
+|--|--|--|--|
+|[김예림](https://github.com/aerimforest)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=yerim5287)](https://solved.ac/yerim5287)|[고주희](https://github.com/ko509)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=budludl)](https://solved.ac/budludl)|
+|[김동완](https://github.com/holawan)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=asdf134652)](https://solved.ac/asdf134652)|[문수빈](https://github.com/subinmun1997)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=subeloper)](https://solved.ac/subeloper)|
+|[서현영](https://github.com/magnolia5)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=magnolia5)](https://solved.ac/magnolia5)|[이재형](https://github.com/jhl8041)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=jhl8041)](https://solved.ac/jhl8041)|
+|[김성용](https://github.com/soeng-dev)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=tjddyd1565)](https://solved.ac/tjddyd1565)||
+
+<br><br>
 
 ### 🔗&nbsp;&nbsp;문제 출제 순서
 |||||||10/1(토)|
@@ -40,13 +49,3 @@
 |`성용`|`수빈`|`재형`|`주희`|`수아`|`동완`|`예림`|
 |10/30(일)|10/31(월)||||||
 |`현영`|`성용`|||||
-
-<br/><br/>
-
-### 👥&nbsp;&nbsp;Member
-|이름|Solved.ac|이름|Solved.ac|
-|--|--|--|--|
-|[김예림](https://github.com/aerimforest)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=yerim5287)](https://solved.ac/yerim5287)|[고주희](https://github.com/ko509)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=budludl)](https://solved.ac/budludl)|
-|[김동완](https://github.com/holawan)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=asdf134652)](https://solved.ac/asdf134652)|[문수빈](https://github.com/subinmun1997)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=subeloper)](https://solved.ac/subeloper)|
-|[서현영](https://github.com/magnolia5)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=magnolia5)](https://solved.ac/magnolia5)|[이재형](https://github.com/jhl8041)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=jhl8041)](https://solved.ac/jhl8041)|
-|[김성용](https://github.com/soeng-dev)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=tjddyd1565)](https://solved.ac/tjddyd1565)||
