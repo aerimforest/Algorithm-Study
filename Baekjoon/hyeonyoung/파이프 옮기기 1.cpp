@@ -24,6 +24,10 @@ int main()
     cnt[0][1][0] = 1;
     for (int j = 2; j < N; ++j)
     {
+        if (house[0][j])
+        {
+            continue;
+        }
         cnt[0][j][0] = cnt[0][j - 1][0] + cnt[0][j - 1][2];
     }
     for (int i = 1; i < N; ++i)
@@ -46,7 +50,7 @@ int main()
                 cnt[i][j][1] = cnt[i - 1][j][1] + cnt[i - 1][j][2];
             }
             // 대각선
-            if (i - 1 >= 0 && j - 1 >= 0)
+            if (i - 1 >= 0 && j - 1 >= 0 && house[i - 1][j] == 0 && house[i][j - 1] == 0)
             {
                 cnt[i][j][2] = cnt[i - 1][j - 1][0] + cnt[i - 1][j - 1][1] + cnt[i - 1][j - 1][2];
             }
