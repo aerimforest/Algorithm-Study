@@ -19,49 +19,69 @@ public class 파이프옮기기1 {
     int currHeadR = pipePos.headR;
     int currHeadC = pipePos.headC;
 
-    if (currHeadR == map.length-1 && currHeadC == map[0].length-1){
+    if (currHeadR == map.length-1 && currHeadC == map.length-1){
       cnt++;
       return;
     }
 
-    // 맵 밖으로 벗어나는지 체크
-    if (currHeadR < 0 || currHeadR >= map.length || currHeadC < 0 || currHeadC >= map[0].length){
-      return;
-    }
-
-    // 벽으로 가는지 체크
-    if (map[currHeadR][currHeadC] == 1){
-      return;
-    }
-
-    printMapAndPipe(map, pipePos);
+//    printMapAndPipe(map, pipePos);
 
     String currPattern = getCurrPattern(pipePos);
-    System.out.println(currPattern);
     if (currPattern.equals("horizontal")){
-      // 오른쪽으로 이동
-      dfs(new PipePos(currHeadR,currHeadC+1, currHeadR, currHeadC), map);
-
-      // 대각선으로 이동
-      dfs(new PipePos(currHeadR+1,currHeadC+1, currHeadR, currHeadC), map);
-
+      goRight(pipePos, map);
     } else if (currPattern.equals("vertical")) {
-      // 아래로 이동
-      dfs(new PipePos(currHeadR+1,currHeadC, currHeadR, currHeadC), map);
-
-      // 대각선으로 이동
-      dfs(new PipePos(currHeadR+1,currHeadC+1, currHeadR, currHeadC), map);
-
+      goDown(pipePos, map);
     } else {
-      // 오른쪽으로 이동
-      dfs(new PipePos(currHeadR,currHeadC+1, currHeadR, currHeadC), map);
-
-      // 아래로 이동
-      dfs(new PipePos(currHeadR+1,currHeadC, currHeadR, currHeadC), map);
-
-      // 대각선으로 이동
-      dfs(new PipePos(currHeadR+1,currHeadC+1, currHeadR, currHeadC), map);
+      goRight(pipePos, map);
+      goDown(pipePos, map);
     }
+    goDiagonal(pipePos, map);
+  }
+
+  private void goRight(PipePos pipePos, int[][] map){
+    int nextHeadR = pipePos.headR;
+    int nextHeadC = pipePos.headC + 1;
+
+    if (isOut(nextHeadR, nextHeadC, map.length)){
+      return;
+    }
+
+    if (map[nextHeadR][nextHeadC] == 1){
+      return;
+    }
+    dfs(new PipePos(nextHeadR,nextHeadC, pipePos.headR, pipePos.headC), map);
+  }
+
+  private void goDown(PipePos pipePos, int[][] map){
+    int nextHeadR = pipePos.headR + 1;
+    int nextHeadC = pipePos.headC;
+
+    if (isOut(nextHeadR, nextHeadC, map.length)){
+      return;
+    }
+
+    if (map[nextHeadR][nextHeadC] == 1){
+      return;
+    }
+    dfs(new PipePos(nextHeadR,nextHeadC, pipePos.headR, pipePos.headC), map);
+  }
+
+  private void goDiagonal(PipePos pipePos, int[][] map){
+    int nextHeadR = pipePos.headR + 1;
+    int nextHeadC = pipePos.headC + 1;
+
+    if (isOut(nextHeadR, nextHeadC, map.length)){
+      return;
+    }
+
+    if (map[nextHeadR][nextHeadC] == 1 || map[nextHeadR][nextHeadC-1] == 1 || map[nextHeadR-1][nextHeadC] == 1){
+      return;
+    }
+    dfs(new PipePos(nextHeadR,nextHeadC, pipePos.headR, pipePos.headC), map);
+  }
+
+  private boolean isOut(int r, int c, int N) {
+    return r < 0 || r >= N || c < 0 || c >= N;
   }
 
   private String getCurrPattern(PipePos pipePos) {
@@ -75,9 +95,8 @@ public class 파이프옮기기1 {
   }
 
   public void solution(int N, int[][] map) {
-    System.out.println(N);
-    System.out.println(Arrays.deepToString(map));
     dfs(new PipePos(0,1,0,0), map);
+    System.out.println(cnt);
   }
 
   public static void main(String[] args) throws IOException {
@@ -103,6 +122,7 @@ public class 파이프옮기기1 {
     for (int[] row : mapPrint) {
       System.out.println(Arrays.toString(row));
     }
+    System.out.println();
   }
 
   private static int[] input2Array(String inputLine){
