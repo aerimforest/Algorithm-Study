@@ -21,11 +21,10 @@ public class 벽부수고이동하기 {
 
   private void bfs(int N, int M, int[][] map){
     Queue<Position> queue = new LinkedList<>();
-    queue.offer(new Position(0, 0, 1));
+    queue.offer(new Position(0, 0, 1, 0));
     visited[0][0][0] = true;
     while(!queue.isEmpty()){
       Position currPosition = queue.poll();
-
 
       for (int i=0; i<4; i++) {
         int newR = currPosition.r + dr[i];
@@ -38,12 +37,12 @@ public class 벽부수고이동하기 {
         if (map[newR][newC] == 1) {
           if (currPosition.crashed == 0 && !visited[1][newR][newC]) {
             visited[currPosition.crashed][newR][newC] = true;
-            queue.offer(new Position(newR, newC, currPosition.cost+1));
+            queue.offer(new Position(newR, newC, currPosition.cost+1, 1));
           }
         } else {
           if (!visited[currPosition.crashed][newR][newC]) {
             visited[currPosition.crashed][newR][newC] = true;
-            queue.offer(new Position(newR, newC, currPosition.cost+1));
+            queue.offer(new Position(newR, newC, currPosition.cost+1, currPosition.crashed));
           }
         }
 
@@ -56,6 +55,11 @@ public class 벽부수고이동하기 {
   }
 
   public void solution(int N, int M, int[][] map) {
+    if (N == 1 && M == 1){
+      System.out.println(1);
+      return;
+    }
+
     visited = new boolean[2][N][M];
     bfs(N, M, map);
     System.out.println(-1);
@@ -103,11 +107,11 @@ public class 벽부수고이동하기 {
     int cost;
     int crashed;
 
-    public Position(int r, int c, int cost){
+    public Position(int r, int c, int cost, int crashed){
       this.r = r;
       this.c = c;
       this.cost = cost;
-      this.crashed = 0;
+      this.crashed = crashed;
     }
   }
 }
