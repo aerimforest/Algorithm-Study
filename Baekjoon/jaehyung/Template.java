@@ -12,7 +12,14 @@ public class Template {
 
   public void solution(int N, int[][] list) {
     System.out.println(N);
-    System.out.println(Arrays.deepToString(list));
+    printMap(list);
+  }
+
+  private void printMap(int[][] map) {
+    for (int[] row : map) {
+      System.out.println(Arrays.toString(row));
+    }
+    System.out.println();
   }
 
   public static void main(String[] args) throws IOException {
