@@ -1,17 +1,14 @@
-package Baekjoon.jaehyung;
+package Programmers.jaehyung;
 
 /**
  * ㅁㅁㅁㅁ [골드 4] (미성공)
  * https://www.acmicpc.net/problem/0000
  */
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.StringTokenizer;
 
 public class 영어끝말잇기 {
 
@@ -64,14 +61,14 @@ public class 영어끝말잇기 {
       System.out.println();
     }
   }
-}
 
-class Input{
-  int n;
-  String[] words;
+  static class Input{
+    int n;
+    String[] words;
 
-  public Input(int n, String[] words){
-    this.n = n;
-    this.words = words;
+    public Input(int n, String[] words){
+      this.n = n;
+      this.words = words;
+    }
   }
 }
