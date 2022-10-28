@@ -1,7 +1,7 @@
 package Baekjoon.jaehyung;
 
 /**
- * 피자판매 [골드 2] (미성공)
+ * 피자판매 [골드 2] (성공)
  * https://www.acmicpc.net/problem/2632
  */
 
@@ -24,21 +24,32 @@ public class 피자판매 {
     List<Integer> partialSumListA = getPartialSumList(extA, A.length, C);
     List<Integer> partialSumListB = getPartialSumList(extB, B.length, C);
 
-    // 아래 연산을 위해 정렬
     Collections.sort(partialSumListA);
     Collections.sort(partialSumListB);
 
-    // A 부분합과, B 부분합을 더해서 목표 피자크기가 있는지 확인
-    // 오름차순 정렬이기 때문에 두 부분합의 합이 목표 피자크기를 넘어가면 continue
-    Loop1:
-    for (Integer partialA : partialSumListA) {
-      for (Integer partialB : partialSumListB) {
-        int sum = partialA + partialB;
-        if (sum == C) {
-          totalCnt++;
-        } else if (sum > C) {
-          continue Loop1;
+    int idx = 0;
+    int idx2 = partialSumListB.size() - 1;
+
+    while(idx < partialSumListA.size() && idx2 >= 0) {
+      long sum = partialSumListA.get(idx) + partialSumListB.get(idx2);
+      if(sum == C) {
+        long cnt1 = 0;
+        long cnt2 = 0;
+        int a = partialSumListA.get(idx);
+        int b = partialSumListB.get(idx2);
+        while(idx < partialSumListA.size() && partialSumListA.get(idx) == a) {
+          cnt1++;
+          idx++;
         }
+        while(idx2 >= 0 && partialSumListB.get(idx2) == b) {
+          cnt2++;
+          idx2--;
+        }
+        totalCnt += cnt1 * cnt2;
+      } else if(sum < C) {
+        idx++;
+      } else {
+        idx2--;
       }
     }
 
@@ -49,23 +60,32 @@ public class 피자판매 {
   // 모든 경우의 부분합 연산
   private List<Integer> getPartialSumList(int[] extArr, int arrLength, int C) {
     List<Integer> partialSumList = new ArrayList<>();
-    for (int i=1; i<=arrLength; i++){
+    for (int i=1; i<arrLength; i++){
       int sum = 0;
       int left = 0;
       for (int right=0; right<arrLength+i; right++){
         if (right - left == i) {
           if (sum == C){
             totalCnt++;
-          }
-          // 부분합이 목표 피자크기보다 작을경우만 저장
-          if (sum < C){
-            partialSumList.add(sum);
+          } else if (sum < C){
+            partialSumList.add(sum); // 부분합이 목표 피자크기보다 작을경우만 저장
           }
           sum -= extArr[left++];
         }
         sum += extArr[right];
       }
     }
+
+    int sumAll = 0;
+    for (int i=0; i<arrLength; i++){
+      sumAll += extArr[i];
+    }
+    if (sumAll == C){
+      totalCnt++;
+    } else if (sumAll < C){
+      partialSumList.add(sumAll); // 부분합이 목표 피자크기보다 작을경우만 저장
+    }
+
     return partialSumList;
   }
 
