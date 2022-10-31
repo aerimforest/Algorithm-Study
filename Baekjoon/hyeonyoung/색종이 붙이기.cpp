@@ -10,7 +10,7 @@ int ans = 10000;
 
 void solve(int idx, vector<int> num)
 {
-    int chk = 0, x = idx / 10, y = x % 10;
+    int chk = 0, x = idx / 10, y = idx % 10;
     for (int i = 0; i < 10; ++i)
     {
         for (int j = 0; j < 10; ++j)
@@ -41,6 +41,11 @@ void solve(int idx, vector<int> num)
         bool next = false;
         for (int k = 1; k <= 5; ++k)
         {
+            if (x + k > 10 || y + k > 10)
+            {
+                continue;
+            }
+
             int cnt = 0;
             for (int i = 0; i < k; ++i)
             {
@@ -101,7 +106,7 @@ int main()
         }
     }
 
-    solve(0, vector<int>(0, 5));
+    solve(0, vector<int>(5, 0));
 
     if (ans == 10000)
     {
