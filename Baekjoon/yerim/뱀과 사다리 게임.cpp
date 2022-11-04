@@ -26,7 +26,6 @@ void bfs()
         int cur = q.front().first;
         int cnt = q.front().second;
         q.pop();
-        printf("\ncur = %d\n", cur);
         if(cur == 100) {
             cout << cnt << '\n';
             return;
@@ -34,10 +33,8 @@ void bfs()
 
         for(int i = 1; i <= 6; i++) {
             int next = cur + i;
-            if(cur > 100 || visited[next]) continue;
-            printf("info[%d] = %d, ", next, info[next]);
-            next += info[next]; // 사다리 또는 뱀 따라 이동
-            printf("next = %d\n", next);
+            if(next > 100 || visited[next]) continue;
+            if(info[next] > 0) next = info[next]; // 사다리 또는 뱀 따라 이동
             q.push({next, cnt+1});
             visited[next] = true;
         }
