@@ -2,7 +2,7 @@ package Baekjoon.jaehyung;
 
 /**
  * 좋은수열 [골드 4] (성공)
- * https://www.acmicpc.net/problem/0000
+ * https://www.acmicpc.net/problem/2661
  */
 
 import java.io.BufferedReader;
