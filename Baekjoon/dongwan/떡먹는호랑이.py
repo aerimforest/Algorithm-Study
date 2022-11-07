@@ -1,7 +1,7 @@
+import sys 
+input = sys.stdin.readline
 d,k = map(int,input().split())
 
-# x3 = x1+x2
-# x4 = x2+x3
 dp = [0 for i in range(6)]
 dp[0],dp[1] = 1,1
 
