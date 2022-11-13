@@ -29,8 +29,8 @@ public class Main {
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                if (A[i][j] < mid) add++;
-                else if (A[i][j] > mid) sub++;
+                if (A[i][j] < mid) add += (mid - A[i][j]);
+                else if (A[i][j] > mid) sub += (A[i][j] - mid);
             }
         }
         int have = b + sub;
