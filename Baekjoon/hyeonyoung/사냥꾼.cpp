@@ -27,40 +27,30 @@ int main()
     }
     sort(animal, animal + N);
 
-    int answer = 0, left = 0;
+    int answer = 0;
     // 동물마다 잡힐 수 있는 위치인지 확인
     for (int i = 0; i < N; ++i)
     {
         int x = animal[i].first, y = animal[i].second;
 
-        // 가장 가까운 사대 찾기 (x이상)
-        int l = left, r = M - 1;
-        while (l < r)
+        // 가장 가까운 사대 찾기
+        int l = 0, r = M - 1;
+        while (l <= r)
         {
             int m = (l + r) / 2;
-            if (x == shooting[m])
+            if (abs(x - shooting[m]) + y <= L)
             {
-                l = m;
+                answer++;
                 break;
             }
             else if (x < shooting[m])
             {
-                r = m;
+                r = m - 1;
             }
-            else if (x > shooting[m])
+            else
             {
                 l = m + 1;
             }
-        }
-        left = l;
-
-        if (l < M && abs(shooting[l] - x) + y <= L)
-        {
-            answer++;
-        }
-        else if (l >= 0 && abs(shooting[l - 1] - x) + y <= L)
-        {
-            answer++;
         }
     }
     cout << answer;
