@@ -9,7 +9,7 @@ read name
 vim "$name.py"
 git add "$name.py"
 git status
-echo "Would you commit? Enter y for agreement"
+echo "Wanna commit? Enter y for agreement"
 read answer
 if [ $answer == 'y' ]
 then
