@@ -4,7 +4,6 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Main {
-    static StringBuilder sb = new StringBuilder();
     static int n, k, ans;
     static int[] nums;
 
@@ -28,11 +27,11 @@ public class Main {
     }
 
     static void pro() {
-        int L = 0, R = Integer.MAX_VALUE;
+        long L = 0, R = Integer.MAX_VALUE;
         while (L <= R) {
-            int mid = (L + R) / 2;
-            if (determination(mid)) {
-                ans = mid;
+            long mid = (L + R) / 2;
+            if (determination((int)mid)) {
+                ans = (int)mid;
                 L = mid + 1;
             } else {
                 R = mid - 1;
