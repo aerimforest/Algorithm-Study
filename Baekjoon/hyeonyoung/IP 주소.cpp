@@ -25,7 +25,7 @@ int main()
         {
             if (c == '.')
             {
-                ip <<= 4;
+                ip <<= 8;
                 ip |= n;
                 n = 0;
             }
@@ -34,27 +34,49 @@ int main()
                 n = n * 10 + c - '0';
             }
         }
-        ip <<= 4;
+        ip <<= 8;
         ip |= n;
         n = 0;
 
         network[i] = ip;
 
-        cout << bitset<32>(ip) << "\n";
+        // cout << bitset<32>(ip) << "\n";
     }
 
-    int x = network[0], y = network[1];
+    int x = network[0], y = network[0];
     for (int i = 1; i < N; ++i)
     {
         x &= network[i];
         y |= network[i];
     }
-    cout << "\n"
-         << bitset<32>(x) << "\n"
-         << bitset<32>(y) << "\n";
-    int M;
-    for (int M = 31; M >= 0; --M)
+    // cout << "\n"
+    //      << bitset<32>(x) << "\n"
+    //      << bitset<32>(y) << "\n";
+
+    int M = 0;
+    for (int m = 0; m < 32; ++m)
     {
+        if ((x & (1 << m)) != (y & (1 << m)))
+        {
+            M = m + 1;
+        }
+    }
+    // cout << M << "\n";
+
+    // cout << bitset<32>((network[0] >> M) << M) << "\n";
+    int address = (M == 32 ? 0 : ((network[0] >> M) << M));
+    cout << ((address >> 24) & 255);
+    for (int i = 2; i >= 0; --i)
+    {
+        cout << "." << ((address >> (i * 8)) & 255);
+    }
+    cout << "\n";
+    // cout << bitset<32>(0xffffffff << M) << "\n";
+    int mask = (M == 32 ? 0 : (0xffffffff << M));
+    cout << ((mask >> 24) & 255);
+    for (int i = 2; i >= 0; --i)
+    {
+        cout << "." << ((mask >> (i * 8)) & 255);
     }
 
     return 0;
