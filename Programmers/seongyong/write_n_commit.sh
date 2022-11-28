@@ -1,8 +1,12 @@
 #!/bin/bash
 
-num=$1
-name=$2
+echo "Enter number of problem"
+read num
 
+echo "Enter name of problem"
+read name
+
+vim "$name.py"
 git add "$name.py"
 git status
 echo "Would you commit? Enter y for agreement"
