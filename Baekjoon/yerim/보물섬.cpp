@@ -17,9 +17,9 @@ void input()
     }
 }
 
-int bfs(int sx, int sy)
+void bfs(int sx, int sy)
 {
-    int cnt = 0;
+    memset(path, 0, sizeof(path));
     memset(visited, false, sizeof(visited));
     queue<pair<int, int>> q;
 
@@ -43,7 +43,6 @@ int bfs(int sx, int sy)
             ans = max(ans, path[nx][ny]);
         }
     }
-    return cnt;
 }
 
 void solve()
