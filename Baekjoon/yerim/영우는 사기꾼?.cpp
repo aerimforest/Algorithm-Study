@@ -3,30 +3,10 @@
 #include <vector>
 using namespace std;
 
-bool flag = true;
-int n, m, k, cnt[100001];
-vector<int> parents[100001];
-
-void check(int state, int node)
-{
-    if(state == 1) {
-        for(int parent: parents[node]) {
-            if(cnt[parent] == 0) { // 부모 노드가 건설되지 않음
-                flag = false;
-                break;
-            }
-        }
-        if(flag) cnt[node]++;
-    }
-    else if(state == 2) {
-        if(cnt[node] == 0) { // 건설되지 않았는데 파괴
-            flag = false;
-        }
-        else {
-            cnt[node]--;
-        }
-    }
-}
+bool cheat;
+int n, m, k;
+int inDegree[100001], built[100001];
+vector <int> child[100001];
 
 void input()
 {
@@ -34,26 +14,50 @@ void input()
     cin >> n >> m >> k;
     for(int i = 0; i < m; i++) {
         cin >> x >> y;
-        parents[y].push_back(x);
+        child[x].push_back(y);
+        inDegree[y]++;
     }
+}
+
+void solve()
+{
+    int state, node;
     for(int i = 0; i < k; i++) {
-        cin >> x >> y;
-        check(x, y);
+        cin >> state >> node;
+
+        if(cheat) continue;
+        if(state == 1) { 
+            if(inDegree[node]) cheat = true; // 이전 건물이 안지어진 경우
+            else{
+                if(built[node]++) continue; // 이미 지어진 경우
+                for(int next : child[node]) inDegree[next]--;
+            }
+        }
+        else {
+            if(built[node] == 0) cheat = true; // 안지어진 건물을 파괴하려는 경우
+            else {
+                built[node]--;
+                if(built[node] > 0) continue;
+                for(int next : child[node]) inDegree[next]++;
+            }
+        }
+
     }
 }
 
 void output()
 {
-    if(flag == false) cout << "Lier!\n";
+    if(cheat) cout << "Lier!\n";
     else cout << "King-God-Emperor\n";
 }
 
-int main(void)
+int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
     input();
+    solve();
     output();
 
     return 0;
