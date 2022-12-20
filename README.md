@@ -29,9 +29,8 @@
 |이름|Solved.ac|이름|Solved.ac|
 |--|--|--|--|
 |[김예림](https://github.com/aerimforest)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=yerim5287)](https://solved.ac/yerim5287)|[이명주](https://github.com/mmmmjjj)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=qorwnsmj)](https://solved.ac/qorwnsmj)|
-|[김동완](https://github.com/holawan)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=asdf134652)](https://solved.ac/asdf134652)|[김성용](https://github.com/soeng-dev)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=tjddyd1565)](https://solved.ac/tjddyd1565)|
-|[서현영](https://github.com/magnolia5)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=magnolia5)](https://solved.ac/magnolia5)|[이현진](https://github.com/ramelHJ)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=ehj1107)](https://solved.ac/ehj1107)|
-|[김주성](https://github.com/Sigmaflo)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=sigmaflo2)](https://solved.ac/sigmaflo2)||
+|[김성용](https://github.com/soeng-dev)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=tjddyd1565)](https://solved.ac/tjddyd1565)|[서현영](https://github.com/magnolia5)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=magnolia5)](https://solved.ac/magnolia5)|
+|[이현진](https://github.com/ramelHJ)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=ehj1107)](https://solved.ac/ehj1107)|[김주성](https://github.com/Sigmaflo)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=sigmaflo2)](https://solved.ac/sigmaflo2)|
 
 <br><br>
 
