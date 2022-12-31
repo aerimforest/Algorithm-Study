@@ -28,9 +28,13 @@
 ### 🎄&nbsp;&nbsp;Member
 |이름|Solved.ac|이름|Solved.ac|
 |--|--|--|--|
-|[김예림](https://github.com/aerimforest)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=yerim5287)](https://solved.ac/yerim5287)|[이명주](https://github.com/mmmmjjj)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=qorwnsmj)](https://solved.ac/qorwnsmj)|
-|[김성용](https://github.com/soeng-dev)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=tjddyd1565)](https://solved.ac/tjddyd1565)|[서현영](https://github.com/magnolia5)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=magnolia5)](https://solved.ac/magnolia5)|
-|[이현진](https://github.com/ramelHJ)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=ehj1107)](https://solved.ac/ehj1107)|[김주성](https://github.com/Sigmaflo)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=sigmaflo2)](https://solved.ac/sigmaflo2)|
+|[김성용](https://github.com/Soeng-dev)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=tjddyd1565)](https://solved.ac/tjddyd1565)|[김세진](https://github.com/kim-se-jin)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=mong7399)](https://solved.ac/mong7399)|
+|[김주성](https://github.com/sigmaflo)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=sigmaflo2)](https://solved.ac/sigmaflo2)|[최동근](https://github.com/reddevilmidzy)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=cdg0228)](https://solved.ac/cdg0228)|
+|[박철민](https://github.com/fe26min)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=fe26min)](https://solved.ac/fe26min)|[서헌영](https://github.com/magnolia5)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=magnolia5)](https://solved.ac/magnolia5)|
+|[은녕](https://github.com/doseee)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=doseee)](https://solved.ac/doseee)|[이명주](https://github.com/mmmmjjj)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=qorwnsmj)](https://solved.ac/qorwnsmj)|
+|[이현진](https://github.com/ramelHJ)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=ehj1107)](https://solved.ac/ehj1107)|[채정영](https://github.com/qpalzmm22)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=qpalzmm22)](https://solved.ac/qpalzmm22)|
+|[홍주완](https://github.com/vjvl95)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=vjvl95)](https://solved.ac/vjvl95)|||
+
 
 <br><br>
 
