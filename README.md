@@ -22,7 +22,8 @@
     - Programmers/이름/파일명
   - `라벨`
     - `I'm trying 🔥`: 시도했지만 해결하지 못한 문제가 있는 pr
-    - `help 🙋‍♂️`: 도움이 필요한 pr  
+    - `help 🙋‍♂️`: 도움이 필요한 pr
+    - `solved before 📝`: 이전에 풀었던 문제가 있는 pr
 
 <br><br>
 
