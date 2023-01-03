@@ -1,72 +1,62 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
 
 public class Main {
-
-    private static List<List<Integer>> graph;
-    private static int[] colors;
-    private static final int RED = 1;
+    static StringBuilder sb = new StringBuilder();
+    static int V, E;
+    static ArrayList<Integer>[] adj;
+    static int[] group;
+    static Queue<Integer> q;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int K = Integer.parseInt(br.readLine());
-        for(int testCase = 0; testCase < K; testCase++) {
+        int T = Integer.parseInt(br.readLine()); // 테스트 케이스의 개수
+        for (int t = 0; t < T; t++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
-            int V = Integer.parseInt(st.nextToken());
-            int E = Integer.parseInt(st.nextToken());
-            graph = new ArrayList<>();
-            colors = new int[V+1];
-            // 그래프 초기화
-            for(int vertex =0 ; vertex <= V; vertex++) {
-                graph.add(new ArrayList<>());
-            }
-
-            // 그래프 연결
-            for(int edge = 0; edge < E; edge++) {
+            V = Integer.parseInt(st.nextToken()); // 정점의 개수
+            E = Integer.parseInt(st.nextToken()); // 간선의 개수
+            adj = new ArrayList[V+1]; // 인접한 정점
+            group = new int[V+1]; // k 번째 정점의 그룹 번호(1 or -1)
+            for (int i = 1; i <= V; i++) adj[i] = new ArrayList<>();
+            for (int i = 0; i < E; i++) {
                 st = new StringTokenizer(br.readLine());
-                int from = Integer.parseInt(st.nextToken());
-                int to = Integer.parseInt(st.nextToken());
-
-                graph.get(from).add(to);
-                graph.get(to).add(from);
+                int a = Integer.parseInt(st.nextToken());
+                int b = Integer.parseInt(st.nextToken());
+                adj[a].add(b);
+                adj[b].add(a);
             }
-
-            boolean rst = false;
-            // 1. 색칠 되지 않은 모든 정점에 대해서
-            for(int vertex = 1; vertex <= V; vertex++) {
-                if(colors[vertex] == 0) {
-                    rst = isBipartiteGraph(vertex, RED);
-                }
-                if(!rst) break;
+            if (bfs()) {
+                sb.append("YES").append("\n");
+            } else {
+                sb.append("NO").append("\n");
             }
-            if(rst) System.out.println("YES");
-            else System.out.println("NO");
         }
-        br.close();
+        System.out.print(sb.toString());
     }
 
-    private static boolean isBipartiteGraph(int start, int color) {
-        Queue<Integer> queue = new LinkedList<>();
-        queue.add(start);
-
-				// 2. 시작 정점 임의의 색상으로 색칠
-        colors[start] = color;
-
-        while(!queue.isEmpty()) {
-            int cur = queue.poll();
-            for(int next : graph.get(cur)) {
-                // 4. 인접 정점 색이 동일하면 이분 그래프가 아님
-                if(colors[cur] == colors[next]) return false;
-
-                // 3. 인접 정점 색칠 안된 경우 현재 정점 반대 색깔로 색칠
-								// 색상 배열을 통해 방문 여부 확인 가능
-                if(colors[next] == 0) {
-                    colors[next] = colors[cur] * -1;
-                    queue.add(next);
+    static boolean bfs() {
+        for (int v = 1; v <= V; v++) {
+            if (group[v] != 0) continue;
+            q = new LinkedList<>();
+            q.add(v); // 시작 정점
+            group[v] = 1; // 시작 정점의 그룹 번호
+            while (!q.isEmpty()) {
+                int n = q.poll(); // 현재 정점
+                for (int next: adj[n]) { // 인접한 정점
+                    if (group[next] == 0) { // 그룹이 지정되지 않았다면
+                        group[next] = group[n] * -1; // 현재 그룹과 다른 그룹에 넣는다
+                        q.add(next); // 다음 탐색할 정점 추가
+                    } else {
+                        if (group[next] == group[n]) return false; // 이분 그래프가 아니면
+                    }
                 }
             }
         }
-        return true;
+
+        return true; // 이분 탐색 그래프이다
     }
 }
