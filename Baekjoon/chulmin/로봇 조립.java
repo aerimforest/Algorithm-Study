@@ -1,12 +1,9 @@
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-// 오답 노트 필요 : https://groti.tistory.com/22 참고
-// Union-Find를 이용하라는데 처음 보는 개념!
-public class 로봇 조립 {
+public class No18116 {
 	
 	static int[] arr;	
 	static int[] cnt;
@@ -47,18 +44,26 @@ public class 로봇 조립 {
 			case 'I':
 				int a = Integer.parseInt(st.nextToken());
 				int b = Integer.parseInt(st.nextToken());
-				if(arr[a] != b) {
-					arr[a] = b;
-					cnt[b] += cnt[a];
+				int px = find(a);
+				int py = find(b);
+				
+				if(px != py) {
+					arr[py] = px;
+					cnt[px] += cnt[py];
 				}
 				break;
 			
 			case 'Q':
 				int c = Integer.parseInt(st.nextToken());
-				sb.append(cnt[arr[c]] + "\n");
+				sb.append(cnt[find(c)] + "\n");
 				break;
 			}
 		}
 		br.close();
+	}
+
+	private static int find(int x) {
+		if(x == arr[x]) return arr[x];
+		return arr[x] = find(arr[x]);
 	}
 }
