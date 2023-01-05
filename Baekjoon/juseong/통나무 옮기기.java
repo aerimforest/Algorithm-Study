@@ -4,92 +4,154 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class B1938_통나무옮기기 {
-	static int N, cnt, dir[][] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-	static char arr[][];
-	static boolean visit[][][], startFlag, endFlag;
-	static Log start, end;
-	static Queue<Log> queue = new LinkedList<>();
-	static class Log {
-		int r, c, isRow;
-		public Log(int r, int c, int isRow) {
-			super();
-			this.r = r;
-			this.c = c;
-			this.isRow = isRow; // 가로인지 세로인 구별하는 변수
-		}
-	}
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		N = Integer.parseInt(br.readLine());
-		arr = new char[N][N];
-		visit = new boolean[N][N][2]; // 중심을 기준으로 가로인지 세로인지 구분하여 방문 처리
-		for (int r=0;r<N;r++) {
-			String input = br.readLine();
-			for (int c=0;c<N;c++) {
-				arr[r][c] = input.charAt(c);
-				if (arr[r][c] == 'B' && start == null) { // 처음 B를 만나면 일단 위치 저장
-					start = new Log(r, c, 0);
-				} else if (arr[r][c] == 'B' && !startFlag) { // B를 두번째 만나면
-					if (start.r == r) start.isRow = 1; // 첫번째 B와 비교하여 가로인지 세로인지 확인
-					start.r = r; start.c = c;
-					visit[r][c][start.isRow] = true; // 방문 처리
-					startFlag = true; // 중심 만나면 B 탐색 멈춤
-				} else if (arr[r][c] == 'E' && end == null) { // 처음 E와 만나면 일단 위치 저장
-					end = new Log(r, c, 0); 
-				} else if (arr[r][c] == 'E' && !endFlag) { // E를 두번째 만나면  
-					if (end.r == r) end.isRow = 1; // 첫번째 E와 비교하여 가로인지 세로인지 확인
-					end.r = r; end.c = c; 
-					endFlag = true; // 중심 만나면 E 탐색 멈춤
-				}
-			}
-		}
-		queue.add(start);
-		System.out.println(bfs());
-	}
-	
-	static int bfs() {
-		while(!queue.isEmpty()) {
-			int size = queue.size();
-			while(size-->0) {
-				Log now = queue.poll();
-				if (now.r == end.r && now.c == end.c && now.isRow == end.isRow) return cnt; // E와 만나면 끝
-				// U D L R
-				for (int i=0;i<4;i++) {
-					int nr = now.r + dir[i][0];
-					int nc = now.c + dir[i][1];
-					// 범위를 벗어나거나 이동하려는 곳에 통나무가 있거나 이미 방문했다면 continue;
-					if (!isIn(nr, nc, now.isRow) || !isInArr(nr, nc, now.isRow) && visit[nr][nc][now.isRow]) continue;
-					visit[nr][nc][now.isRow] = true; // 방문 처리
-					queue.offer(new Log(nr, nc, now.isRow));
-				}
-				// T
-				int value = now.isRow == 0?1:0;
-				/* 
-				 범위를 벗어나거나 이동하려는 곳에 통나무가 있거나 이미 방문했다면 continue;
-				 중심을 기준으로 8방향을 다 탐색 해야함 (한 줄씩 탐색)
-				 */
-				if (!isIn(now.r, now.c-1, 0) || !isIn(now.r, now.c, 0) || !isIn(now.r, now.c+1, 0) ||
-						!isInArr(now.r, now.c-1, 0) || !isInArr(now.r, now.c, 0) || !isInArr(now.r, now.c+1, 0) &&
-						visit[now.r][now.c][value]) continue;
-				visit[now.r][now.c][value] = true; // 방문 처리
-				queue.offer(new Log(now.r, now.c, value));
-			}
-			cnt++;
-		}
-		return 0; // E와 못만남
-	}
-	
-	static boolean isInArr(int r, int c, int isRow) {
-		for (int i=-1;i<2;i++) { // -1, 0, 1 확인
-			if (isRow == 0 && arr[r+i][c] == '1') return false; // 세로이면 r-1, r, r+1에 모두 나무가 없어야함
-			else if (isRow == 1 && arr[r][c+i] == '1') return false; // 가로이면 c-1, c, c+1에 모두 나무가 없어야함
-		}
-		return true;
-	}
-	
-	static boolean isIn(int r, int c, int isRow) {
-		if (isRow == 0) return r-1>=0 && r+1<N && c>=0 && c<N; // 세로이면 r-1, r, r+1이 모두 범위 안에 들어야함
-		else return r>=0 && r<N && c-1>=0 && c+1<N; // 가로이면 c-1, c, c+1이 모두 범위 안에 들어야함
-	}
+public class Main {
+    static int N, ans;
+    static char[][] A;
+    static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}}; // 상하좌우
+    static Log start;
+    static Log end;
+    static boolean[][][] visited;
+    static class Log{
+        int x, y, d;
+
+        public Log(int x, int y, int d) {
+            this.x = x;
+            this.y = y;
+            this.d = d;
+        }
+    }
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        N = Integer.parseInt(br.readLine()); // 한번의 길이 (4 ≤ N ≤ 50)
+        A = new char[N][N];
+        for (int i = 0; i < N; i++) {
+            String s = br.readLine();
+            for (int j = 0; j < N; j++) {
+                A[i][j] = s.charAt(j);
+            }
+        }
+        visited = new boolean[N][N][2];
+        // 시작위치, 도착위치를 찾는다
+        find_start_end();
+        // 통나무를 위, 아래, 왼쪽, 오른쪽, 회전(90) 으로 이동한다
+        bfs();
+        System.out.println(ans);
+    }
+
+    static void bfs() {
+        Queue<Log> Q = new LinkedList<>();
+        Q.add(new Log(start.x, start.y, start.d));
+        visited[start.x][start.y][start.d] = true;
+        int move = 0;
+        while (!Q.isEmpty()) {
+            int size = Q.size();
+            for (int s = 0; s < size; s++) {
+                Log log = Q.poll();
+                int x = log.x, y = log.y, d = log.d;
+                if (x == end.x && y == end.y && d == end.d) {
+                    ans = move;
+                    return;
+                }
+                boolean[] ad = new boolean[8]; // 상하좌우대각선에 이동하지 못하는 칸
+                for (int k = 0; k < 8; k++) {  // 상하좌우대각선 가능 여부
+                    int nx = x + dir[k][0], ny = y + dir[k][1];
+                    if (nx < 0 || ny < 0 || nx >= N || ny >= N){
+                        ad[k] = true; // 범위에 벗어나면
+                    } else if (A[nx][ny] == '1') ad[k] = true; // 1이 있으면
+                }
+                if (log.d == 0) { // 통나무가 가로 일때
+                    int nd = 1;
+                    for (int k = 0; k < 4; k++) { // 상하좌우
+                        int nx = x + dir[k][0], ny = y + dir[k][1];
+                        if (k == 0 && !ad[4] && !ad[0] && !ad[5]){ // 위로 이동 가능
+                            if (visited[nx][ny][d]) continue;
+                            visited[nx][ny][d] = true;
+                            Q.add(new Log(nx, ny, d));
+                        } else if (k == 1 && !ad[6] && !ad[1] && !ad[7]) { // 아래로 이동 가능
+                            if (visited[nx][ny][d]) continue;
+                            visited[nx][ny][d] = true;
+                            Q.add(new Log(nx, ny, d));
+                        } else if (k == 2 || k == 3) { // 왼쪽 또는 오른쪽 일때
+                            int fx = nx + dir[k][0], fy = ny + dir[k][1]; // 이동할 칸
+                            if (fx < 0 || fy < 0 || fx >= N || fy >= N) continue;
+                            if (visited[nx][ny][d]) continue;
+                            visited[nx][ny][d] = true;
+                            Q.add(new Log(nx, ny, d));
+                        }
+                    }
+                    if (!ad[0] && !ad[1] && !ad[2]&& !ad[3]&& !ad[4]&& !ad[5]&& !ad[6]&& !ad[7]) { // 회전 가능
+                        if (!visited[x][y][nd]) { // 방문 확인
+                            visited[x][y][nd] = true;
+                            Q.add(new Log(x, y, nd));
+                        }
+                    }
+                } else { // 통나무가 세로 일때
+                    int nd = 0;
+                    for (int k = 0; k < 4; k++) { // 상하좌우
+                        int nx = x + dir[k][0], ny = y + dir[k][1];
+                        if (k == 0 || k == 1){ // 위 또는 아래로 이동 할때
+                            int fx = nx + dir[k][0], fy = ny + dir[k][1]; // 이동할 칸
+                            if (fx < 0 || fy < 0 || fx >= N || fy >= N) continue;
+                            if (visited[nx][ny][d]) continue;
+                            visited[nx][ny][d] = true;
+                            Q.add(new Log(nx, ny, d));
+                        } else if (k == 2 && !ad[4] && !ad[2] && !ad[6]) { // 왼쪽으로 이동 가능
+                            if (visited[nx][ny][d]) continue;
+                            visited[nx][ny][d] = true;
+                            Q.add(new Log(nx, ny, d));
+                        } else if(k == 3 && !ad[5] && !ad[3] && !ad[7]) { // 오른쪽으로 이동 가능
+                            if (visited[nx][ny][d]) continue;
+                            visited[nx][ny][d] = true;
+                            Q.add(new Log(nx, ny, d));
+                        }
+                    }
+                    if (!ad[0] && !ad[1] && !ad[2]&& !ad[3]&& !ad[4]&& !ad[5]&& !ad[6]&& !ad[7]) { // 회전 가능
+                        if (visited[x][y][nd]) continue;
+                        visited[x][y][nd] = true;
+                        Q.add(new Log(x, y, nd));
+                    }
+                }
+            }
+            move++;
+        }
+    }
+
+    static void find_start_end() {
+        int sx, sy, sd, ex, ey, ed;
+        int S = 0, E = 0;
+        int[][] s = new int[3][2];
+        int[][] e = new int[3][2];
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (A[i][j] == 'B') {
+                    s[S][0] = i;
+                    s[S][1] = j;
+                    S++;
+                    A[i][j] = '0';
+                } else if (A[i][j] == 'E') {
+                    e[E][0] = i;
+                    e[E][1] = j;
+                    E++;
+                    A[i][j] = '0';
+                }
+            }
+        }
+        // 시작점과 도착점의 중심점
+        sx = s[1][0];
+        sy = s[1][1];
+        ex = e[1][0];
+        ey = e[1][1];
+        if (s[0][0] == s[1][0]) { // 줄이 같으면
+            sd = 0; // 가로 방향
+        } else {
+            sd = 1; // 세로 방향
+        }
+        if (e[0][0] == e[1][0]) { // 줄이 같으면
+            ed = 0; // 가로 방향
+        } else {
+            ed = 1; // 세로 방향
+        }
+        start = new Log(sx, sy, sd);
+        end = new Log(ex, ey, ed);
+    }
 }
