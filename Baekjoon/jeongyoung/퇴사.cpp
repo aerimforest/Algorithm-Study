@@ -36,6 +36,5 @@ int main(){
 
   cout << solve(0);
 
-
   return 0;
 }
