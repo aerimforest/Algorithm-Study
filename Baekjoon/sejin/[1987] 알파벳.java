@@ -6,6 +6,9 @@ import java.io.*;
 
 // 해결 방법
 // DFS 탐색
+	// 상하좌우로 이동하며 알파벳탐색
+	// 중복 방문은 불가하므로, 방문한 알파벳은 visited= true 를 해준다.
+	// 여기서 visited는 알파벳의 개수가 26개 이므로, new boolean[26] 으로 생성하여 처리
 
 public class Main{
 
@@ -17,7 +20,7 @@ public class Main{
 
 	public static void main(String args[]) throws Exception{
         // 값 입력받기 --> 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		R = Integer.parseInt(st.nextToken());
 		C = Integer.parseInt(st.nextToken());
