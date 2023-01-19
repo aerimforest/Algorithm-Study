@@ -9,7 +9,7 @@ public class Solution {
             max = Math.max(jobs[i][1], max);
         }
         Job target = new Job(0,0);
-        
+
         //i의 범위를 줄이면 좀 더 시간을 줄일 수 있음
         for(int i = 0; i <= 10_000_000; i++){
             //그 시간대에서 추가 시키기
