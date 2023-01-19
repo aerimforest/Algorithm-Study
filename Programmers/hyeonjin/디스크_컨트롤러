@@ -1,0 +1,50 @@
+import java.util.*;
+
+public class Solution {
+    public static int solution(int[][] jobs) {
+        PriorityQueue<Job> pq = new PriorityQueue<>();
+        int time = 0;
+        int max = 0;
+        for(int i = 0; i < jobs.length; i++){
+            max = Math.max(jobs[i][1], max);
+        }
+        Job target = new Job(0,0);
+        
+        //i의 범위를 줄이면 좀 더 시간을 줄일 수 있음
+        for(int i = 0; i <= 10_000_000; i++){
+            //그 시간대에서 추가 시키기
+            for(int j = 0; j < jobs.length; j++){
+                if(jobs[j][0] == i){
+                    pq.add(new Job(i, jobs[j][1]));
+                }
+            }
+
+            if(target.working == target.length){
+                if(pq.isEmpty()) continue;
+
+                target = pq.poll();
+            }
+
+            time += 1 + pq.size();
+            target.working++;
+        }
+
+        return time / jobs.length;
+    }
+
+    public static class Job implements Comparable<Job>{
+        int start;
+        int length;
+        int working;
+        public Job(int start, int length){
+            this.start = start;
+            this.length = length;
+            this.working = 0;
+        }
+
+        @Override
+        public int compareTo(Job o){
+            return length - o.length;
+        }
+    }
+}
