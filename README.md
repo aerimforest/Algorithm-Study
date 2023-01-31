@@ -32,22 +32,22 @@
 |--|--|--|--|
 |[김성용](https://github.com/Soeng-dev)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=tjddyd1565)](https://solved.ac/tjddyd1565)|[김세진](https://github.com/kim-se-jin)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=mong7399)](https://solved.ac/mong7399)|
 |[김주성](https://github.com/sigmaflo)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=sigmaflo2)](https://solved.ac/sigmaflo2)|[최동근](https://github.com/reddevilmidzy)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=cdg0228)](https://solved.ac/cdg0228)|
-|[박철민](https://github.com/fe26min)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=fe26min)](https://solved.ac/fe26min)|[서현영](https://github.com/magnolia5)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=magnolia5)](https://solved.ac/magnolia5)|
-|[최은녕](https://github.com/doseee)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=doseee)](https://solved.ac/doseee)|[이명주](https://github.com/mmmmjjj)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=qorwnsmj)](https://solved.ac/qorwnsmj)|
-|[이현진](https://github.com/ramelHJ)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=ehj1107)](https://solved.ac/ehj1107)|[채정영](https://github.com/qpalzmm22)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=qpalzmm22)](https://solved.ac/qpalzmm22)|
+|[박철민](https://github.com/fe26min)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=fe26min)](https://solved.ac/fe26min)|[최은녕](https://github.com/doseee)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=doseee)](https://solved.ac/doseee)|
+|[이명주](https://github.com/mmmmjjj)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=qorwnsmj)](https://solved.ac/qorwnsmj)|[이현진](https://github.com/ramelHJ)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=ehj1107)](https://solved.ac/ehj1107)|
+|[채정영](https://github.com/qpalzmm22)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=qpalzmm22)](https://solved.ac/qpalzmm22)|||
 
 
 <br><br>
 
 ### 🧣&nbsp;&nbsp;문제 출제 순서
-|1/1(일)|1/2(월)|1/3(화)|1/4(수)|1/5(목)|1/6(금)|1/7(토)|
+||||2/1(수)|2/2(목)|2/3(금)|2/4(토)|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|`성용`|`세진`|`주성`|`동근`|`철민`|`현영`|`은녕`|
-|1/8(일)|1/9(월)|1/10(화)|1/11(수)|1/12(목)|1/13(금)|1/14(토)|
-|`명주`|`현진`|`정영`|`성용`|`세진`|`주성`|`동근`|
-|1/16(일)|1/16(월)|1/17(화)|1/18(수)|1/19(목)|1/20(금)|1/21(토)|
-|`철민`|`현영`|`은녕`|`명주`|`현진`|`정영`|`성용`|
-|1/22(일)|1/23(월)|1/24(화)|1/25(수)|1/26(목)|1/27(금)|1/28(토)|
-|`세진`|`주성`|`동근`|`철민`|`현영`|`은녕`|`명주`|
-|1/29(일)|1/30(월)|1/31(화)|||||
-|`현진`|`정영`|`성용`|||||
+||||`성용`|`세진`|`주성`|`동근`|
+|2/5(일)|2/6(월)|2/7(화)|2/8(수)|2/9(목)|2/10(금)|2/11(토)|
+|`은녕`|`명주`|`현진`|`정영`|`성용`|`세진`|`주성`|
+|2/12(일)|2/13(월)|2/14(화)|2/15(수)|2/16(목)|2/17(금)|2/18(토)|
+|`동근`|`철민`|`은녕`|`명주`|`현진`|`정영`|`성용`|
+|2/19(일)|2/20(월)|2/21(화)|2/22(수)|2/23(목)|2/24(금)|2/25(토)|
+|`세진`|`주성`|`동근`|`철민`|`은녕`|`명주`|`현진`|
+|1/26(일)|1/27(월)|1/28(화)|||||
+|`정영`|`성용`|`세진`|||||
