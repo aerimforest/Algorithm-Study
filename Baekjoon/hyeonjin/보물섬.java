@@ -6,7 +6,7 @@ import java.util.StringTokenizer;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Main {
+public class 보물섬 {
     static final char LAND = 'L';
     static final char SEA = 'W';
     static char[][] arr;
