@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main {
+public class Sample {
 	static FastReader scan = new FastReader();
     static StringBuilder sb = new StringBuilder();
     
@@ -22,8 +22,11 @@ public class Main {
     public static ArrayList<FireBall> list;
     public static Queue<FireBall>[][] grid; 
         
-    static void input() {
-    	
+    static void input() {        	
+    	N = scan.nextInt();
+    	M = scan.nextInt();
+    	K = scan.nextInt();
+        
     	list = new ArrayList<>();
     	
         for (int i = 0; i < M; i++) {
@@ -98,18 +101,18 @@ public class Main {
     }
    
     public static void main(String[] args) {
-    	input();
+    	 input();
     	
-    	 while (K-- > 0) {
-             move();
-             combineAndDivide();
-         }
-
-         int answer = 0;
-         for (FireBall f : list) {
-             answer += f.m;
-         }
-         System.out.print(answer);
+		 while (K-- > 0) {
+		     move();
+		     combineAndDivide();
+		 }
+		
+		 int answer = 0;
+		 for (FireBall f : list) {
+		     answer += f.m;
+		 }
+		 System.out.print(answer);
     	
     }
     
@@ -117,11 +120,11 @@ public class Main {
 	    int r, c, m, d, s;
 	
 	    public FireBall(int r, int c, int m, int d, int s) {
-	        this.r = r;
-	        this.c = c;
-	        this.m = m;
-	        this.d = d;
-	        this.s = s;
+	        this.r = r; // 행
+	        this.c = c; // 열
+	        this.m = m; // 질량
+	        this.d = d; // 방향
+	        this.s = s; // 속력
 	    }
     }
     
