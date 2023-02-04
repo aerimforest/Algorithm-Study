@@ -33,8 +33,8 @@
 |[김성용](https://github.com/Soeng-dev)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=tjddyd1565)](https://solved.ac/tjddyd1565)|[김세진](https://github.com/kim-se-jin)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=mong7399)](https://solved.ac/mong7399)|
 |[김주성](https://github.com/sigmaflo)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=sigmaflo2)](https://solved.ac/sigmaflo2)|[최동근](https://github.com/reddevilmidzy)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=cdg0228)](https://solved.ac/cdg0228)|
 |[박철민](https://github.com/fe26min)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=fe26min)](https://solved.ac/fe26min)|[최은녕](https://github.com/doseee)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=doseee)](https://solved.ac/doseee)|
-|[이명주](https://github.com/mmmmjjj)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=qorwnsmj)](https://solved.ac/qorwnsmj)|[이현진](https://github.com/ramelHJ)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=ehj1107)](https://solved.ac/ehj1107)|
-|[채정영](https://github.com/qpalzmm22)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=qpalzmm22)](https://solved.ac/qpalzmm22)|||
+|[이현진](https://github.com/ramelHJ)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=ehj1107)](https://solved.ac/ehj1107)|[채정영](https://github.com/qpalzmm22)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=qpalzmm22)](https://solved.ac/qpalzmm22)|
+|[한성길](https://github.com/zaien24)|[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=zaien24)](https://solved.ac/zaien24)|||
 
 
 <br><br>
@@ -44,10 +44,10 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 ||||`성용`|`세진`|`주성`|`동근`|
 |2/5(일)|2/6(월)|2/7(화)|2/8(수)|2/9(목)|2/10(금)|2/11(토)|
-|`은녕`|`명주`|`현진`|`정영`|`성용`|`세진`|`주성`|
+|`철민`|`은녕`|`현진`|`정영`|`성길`|`성용`|`세진`|
 |2/12(일)|2/13(월)|2/14(화)|2/15(수)|2/16(목)|2/17(금)|2/18(토)|
-|`동근`|`철민`|`은녕`|`명주`|`현진`|`정영`|`성용`|
+|`주성`|`동근`|`철민`|`은녕`|`현진`|`정영`|`성길`|
 |2/19(일)|2/20(월)|2/21(화)|2/22(수)|2/23(목)|2/24(금)|2/25(토)|
-|`세진`|`주성`|`동근`|`철민`|`은녕`|`명주`|`현진`|
+|`세진`|`주성`|`동근`|`철민`|`은녕`|`현진`|`정영`|
 |2/26(일)|2/27(월)|2/28(화)|||||
-|`정영`|`성용`|`세진`|||||
+|`성길`|`성용`|`세진`|||||
