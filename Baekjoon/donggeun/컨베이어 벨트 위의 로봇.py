@@ -22,7 +22,6 @@ while True:
         if robot[i] and not robot[i+1] and belt[i+1]:
             belt[i+1] -= 1
             robot[i+1], robot[i] = robot[i], 0
-    # robot[n-1] = 0
 
     if not robot[0] and belt[0]:
         robot[0] = 1
