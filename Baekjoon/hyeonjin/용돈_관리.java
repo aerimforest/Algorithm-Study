@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Main {
+public class 용돈_관리 {
     static int N;
     static int M;
     static int[] amount;
