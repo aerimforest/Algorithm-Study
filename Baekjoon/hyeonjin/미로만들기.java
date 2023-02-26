@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Main {
+public class 미로만들기 {
     static final int[] dx = {-1,0,1,0};
     static final int[] dy = {0,1,0,-1};
     static int N;
