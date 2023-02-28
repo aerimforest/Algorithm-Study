@@ -54,7 +54,7 @@ public class B2146_다리만들기 {
         }
         landNum++;
     }
-
+   
     private static void bfs(int r, int c) {
         Queue<Point> queue = new LinkedList<Point>();
         
