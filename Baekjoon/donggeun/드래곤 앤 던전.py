@@ -14,7 +14,6 @@ def fight(atk, max_hp):
                 
             else: # 지는 경우
                 return False
-            
         else: # 포션 있음
             atk += a
             cur_hp = min(max_hp, cur_hp + h)
