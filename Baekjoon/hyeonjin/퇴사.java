@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.*;
 
-public class Main {
+public class 퇴사 {
     static int N;
     static List<Counsel> counsels;
     static int[] dp;

@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.*;
 
-public class Main {
+public class 감시 {
     static boolean[] check;
     static List<CCTV> cctv;
     static int[][] arr;

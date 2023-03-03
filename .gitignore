@@ -1,3 +1,5 @@
 .idea/
 *.iml
 out/
+Baekjoon/joowan/input.txt
+.gitignore

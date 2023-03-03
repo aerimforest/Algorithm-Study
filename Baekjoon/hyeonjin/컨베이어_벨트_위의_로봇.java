@@ -6,7 +6,7 @@ import java.util.StringTokenizer;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Main{
+public class 컨베이어_벨트_위의_로봇{
     static int length;
     static int zeroCount;
     static int[] conveyor;
